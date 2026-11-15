@@ -80,6 +80,7 @@ export async function handleClassReport(req: Request): Promise<Response> {
         const url = new URL(req.url);
         const className = url.searchParams.get('class_name') || '7А';
         const schoolId = Number(url.searchParams.get('school_id') || '1');
+        const format = (url.searchParams.get('format') || '').toLowerCase();
 
         const students = await sql`
             SELECT u.id, u.first_name, u.username, u.words_learned, u.accuracy_percent, u.streak_days,
@@ -99,11 +100,58 @@ export async function handleClassReport(req: Request): Promise<Response> {
             WHERE u.class_name = ${className}
         `;
 
+        const safeClass = encodeURIComponent(className).replace(/%/g, '_') || 'report';
+        if (format === 'csv') {
+            const header = 'id,first_name,username,words_learned,accuracy_percent,streak_days,corrections_count,confirmations_count,total_xp,last_active_date\n';
+            const rows = students.map((s: any) =>
+                [
+                    s.id,
+                    `"${(s.first_name || '').replace(/"/g, '""')}"`,
+                    `"${(s.username || '').replace(/"/g, '""')}"`,
+                    s.words_learned ?? 0,
+                    s.accuracy_percent ?? 0,
+                    s.streak_days ?? 0,
+                    s.corrections_count ?? 0,
+                    s.confirmations_count ?? 0,
+                    s.total_xp ?? 0,
+                    s.last_active_date ? new Date(s.last_active_date).toISOString() : ''
+                ].join(',')
+            ).join('\n');
+
+            return new Response('\uFEFF' + header + rows, {
+                status: 200,
+                headers: {
+                    'Content-Type': 'text/csv; charset=utf-8',
+                    'Content-Disposition': `attachment; filename="class_${safeClass}_report.csv"`,
+                    'Access-Control-Allow-Origin': '*'
+                }
+            });
+        }
+
+        if (format === 'json' && url.searchParams.get('download') === 'true') {
+            const data = {
+                status: 'ok',
+                class_name: className,
+                exported_at: new Date().toISOString(),
+                total_students: students.length,
+                class_averages: stats[0] || {},
+                students
+            };
+            return new Response(JSON.stringify(data, null, 2), {
+                status: 200,
+                headers: {
+                    'Content-Type': 'application/json; charset=utf-8',
+                    'Content-Disposition': `attachment; filename="class_${safeClass}_report.json"`,
+                    'Access-Control-Allow-Origin': '*'
+                }
+            });
+        }
+
         return Response.json({
             status: 'ok',
             class_name: className,
             total_students: students.length,
-            class_averages: stats[0],
+            class_averages: stats[0] || {},
             students
         });
     } catch (e: unknown) {

@@ -68,6 +68,7 @@
       --surface-muted-fill: #F1F5F9;
       --surface-icon-box: #F8FAFC;
       --surface-close-btn: rgba(15, 23, 42, 0.06);
+      --surface-card: #ffffff;
       --border-subtle: rgba(15, 23, 42, 0.07);
       --border-control: #CBD5E1;
       --border-option: #E2E8F0;
@@ -203,6 +204,7 @@
       --surface-muted-fill: rgba(15, 28, 44, 0.86);
       --surface-icon-box: rgba(30, 49, 74, 0.9);
       --surface-close-btn: rgba(148, 163, 184, 0.14);
+      --surface-card: #132238;
       --border-subtle: rgba(148, 163, 184, 0.14);
       --border-control: rgba(148, 163, 184, 0.26);
       --border-option: rgba(148, 163, 184, 0.22);
@@ -644,6 +646,44 @@
       border-radius: 6px;
       background: var(--surface-subtle);
       color: var(--honey);
+    }
+
+    .lms-export-menu {
+      position: absolute;
+      right: 0;
+      top: calc(100% + 6px);
+      background: #ffffff !important;
+      border: 1.5px solid var(--border-control) !important;
+      border-radius: 12px;
+      box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.35);
+      z-index: 999999 !important;
+      min-width: 190px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    [data-theme="dark"] .lms-export-menu {
+      background: #0f1b2b !important;
+      border-color: rgba(148, 163, 184, 0.3) !important;
+      box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.7);
+    }
+    .lms-export-item {
+      width: 100%;
+      padding: 11px 16px;
+      text-align: left;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--ink);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: background 0.15s;
+    }
+    .lms-export-item:hover {
+      background: var(--dropdown-hover) !important;
     }
 
     
@@ -2776,11 +2816,22 @@
           </div>
 
           
-          <div style="display: flex; gap: 8px; align-items: center;">
-            <input id="lms-class-input" type="text" value="7А" placeholder="Класс (напр. 7А)" style="flex: 1; padding: 10px 14px; border-radius: 12px; background: var(--surface-input); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 13px; font-weight: 700;" />
-            <button type="button" onclick="loadLmsReport()" class="btn-3d btn-3d-primary" style="padding: 10px 16px; font-size: 13px;">
-              📊 Отчет
-            </button>
+          <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap; position: relative; z-index: 10000;">
+            <input id="lms-class-input" type="text" value="7А" oninput="loadLmsReport()" onchange="loadLmsReport()" placeholder="Класс (напр. 7А)" style="flex: 1; min-width: 110px; padding: 10px 14px; border-radius: 12px; background: var(--surface-input); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 13px; font-weight: 700;" />
+            <div style="position: relative; z-index: 10001;">
+              <button id="lms-export-trigger" type="button" onclick="toggleLmsExportMenu(event)" class="btn-3d btn-3d-primary" style="padding: 10px 14px; font-size: 13px; font-weight: 800; display: flex; align-items: center; gap: 6px;">
+                <span>📥 Скачать отчёт</span>
+                <span id="lms-export-arrow" style="font-size: 9px; transition: transform 0.2s;">▼</span>
+              </button>
+              <div id="lms-export-dropdown" class="lms-export-menu hidden">
+                <button type="button" onclick="exportLmsReport('csv'); closeLmsExportMenu();" class="lms-export-item">
+                  <span>📊</span> <span>Формат CSV (.csv)</span>
+                </button>
+                <button type="button" onclick="exportLmsReport('json'); closeLmsExportMenu();" class="lms-export-item" style="border-top: 1px solid var(--border-subtle);">
+                  <span>💾</span> <span>Формат JSON (.json)</span>
+                </button>
+              </div>
+            </div>
           </div>
 
           
@@ -6542,6 +6593,35 @@
 
     function closeLmsModal() {
       document.getElementById('lms-modal').classList.add('hidden');
+      closeLmsExportMenu();
+    }
+
+    function toggleLmsExportMenu(e) {
+      if (e) e.stopPropagation();
+      const drop = document.getElementById('lms-export-dropdown');
+      const arrow = document.getElementById('lms-export-arrow');
+      if (!drop) return;
+      const willOpen = drop.classList.contains('hidden');
+      drop.classList.toggle('hidden', !willOpen);
+      if (arrow) arrow.style.transform = willOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+    }
+
+    function closeLmsExportMenu() {
+      const drop = document.getElementById('lms-export-dropdown');
+      const arrow = document.getElementById('lms-export-arrow');
+      if (drop) drop.classList.add('hidden');
+      if (arrow) arrow.style.transform = 'rotate(0deg)';
+    }
+
+    function exportLmsReport(format) {
+      const cls = document.getElementById('lms-class-input').value.trim() || '7А';
+      const a = document.createElement('a');
+      a.href = '/api/lms/class-report?class_name=' + encodeURIComponent(cls) + '&format=' + format + '&download=true';
+      a.download = `class_${cls}_report.${format}`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      showToast('Отчет класса ' + cls + ' скачивается (' + format.toUpperCase() + ')');
     }
 
     function loadLmsReport() {
@@ -6744,6 +6824,11 @@
         document.getElementById('lang-arrow').style.transform = 'rotate(0deg)';
         trigger.setAttribute('aria-expanded', 'false');
       }
+      const lmsDrop = document.getElementById('lms-export-dropdown');
+      const lmsTrigger = document.getElementById('lms-export-trigger');
+      if (lmsDrop && !lmsDrop.classList.contains('hidden') && !lmsDrop.contains(e.target) && (!lmsTrigger || !lmsTrigger.contains(e.target))) {
+        closeLmsExportMenu();
+      }
     });
 
     document.addEventListener('keydown', (e) => {
@@ -6758,6 +6843,7 @@
         closeLmsModal();
         closeExpertModal();
         closeSliceModal();
+        closeLmsExportMenu();
         const drop = document.getElementById('lang-dropdown');
         if (drop && !drop.classList.contains('hidden')) drop.classList.add('hidden');
       }

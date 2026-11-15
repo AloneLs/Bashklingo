@@ -10,8 +10,8 @@ export async function handleUserProfile(req: Request): Promise<Response> {
         let users = await sql`SELECT * FROM users WHERE telegram_id = ${tid}`;
         if (users.length === 0) {
             await sql`
-                INSERT INTO users (telegram_id, username, first_name, school_id, class_name, streak_days, honey_drops, words_learned, accuracy_percent, explorer_xp, guide_xp, hearts, streak_freeze_count)
-                VALUES (${tid}, ${username}, ${firstName}, 1, '7А', 1, 92, 14, 95, 120, 35, 5, 1)
+                INSERT INTO users (telegram_id, username, first_name, role, school_id, class_name, selected_lang_pair, streak_days, honey_drops, words_learned, accuracy_percent, explorer_xp, guide_xp, hearts, streak_freeze_count)
+                VALUES (${tid}, ${username}, ${firstName}, 'admin', 1, '7А', 'ba-ru', 1, 92, 14, 95, 120, 35, 5, 1)
             `;
             users = await sql`SELECT * FROM users WHERE telegram_id = ${tid}`;
         }
@@ -33,7 +33,10 @@ export async function handleUserProfile(req: Request): Promise<Response> {
                 telegram_id: user.telegram_id,
                 username: user.username,
                 first_name: user.first_name,
-                class_name: user.class_name,
+                role: user.role || 'admin',
+                school_id: user.school_id || 1,
+                class_name: user.class_name || '7А',
+                selected_lang_pair: user.selected_lang_pair || 'ba-ru',
                 streak_days: user.streak_days,
                 honey_drops: user.honey_drops,
                 words_learned: user.words_learned,

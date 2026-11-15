@@ -40,7 +40,7 @@ bot.command('start', async (ctx) => {
                 web_app: { url: FRONTEND_URL }
             }
         });
-    } catch (_) { /* ignored */ }
+    } catch (_) {  }
 
     const keyboard = new InlineKeyboard()
         .webApp('🍯 Открыть Basklingo (iOS Glass TMA)', FRONTEND_URL)
@@ -120,7 +120,7 @@ bot.command('daily', async (ctx) => {
             { reply_markup: kb, parse_mode: 'Markdown' }
         );
     } catch (_) {
-        /* ignored */
+        
         await ctx.reply('Сервер базы данных временно недоступен.');
     }
 });
@@ -144,7 +144,7 @@ bot.command('report', async (ctx) => {
 
         await ctx.reply(text, { parse_mode: 'Markdown' });
     } catch (_) {
-        /* ignored */
+        
         await ctx.reply('Не удалось сформировать отчёт.');
     }
 });
@@ -178,7 +178,7 @@ bot.command('moderate', async (ctx) => {
 
         await ctx.reply(text, { reply_markup: kb, parse_mode: 'Markdown' });
     } catch (_) {
-        /* ignored */
+        
         await ctx.reply('Ошибка получения списка модерации.');
     }
 });
@@ -383,5 +383,18 @@ bot.on('message:text', async (ctx) => {
     await ctx.reply(`🦉 **«Тел-Остаһы»:**\n\n${answer}`, { parse_mode: 'Markdown' });
 });
 
-bot.start();
-console.log('Basklingo Telegram Bot with FSM & Registration started successfully');
+bot.catch((err) => {
+    console.warn('[Telegram Bot Warning]:', err.message || err);
+});
+
+if (process.env.RUN_TELEGRAM_BOT === 'true') {
+    bot.start({
+        onStart(botInfo) {
+            console.log(`Basklingo Telegram Bot (@${botInfo.username}) with FSM & Registration started successfully`);
+        }
+    }).catch((err) => {
+        console.warn('[Telegram Bot Notice]: Polling inactive (network or VPN unreachable):', err.message || err);
+    });
+} else {
+    console.log('[Telegram Bot] Бот отключен (RUN_TELEGRAM_BOT != true). Веб-платформа и TTS работают автономно.');
+}

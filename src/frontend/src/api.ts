@@ -10,7 +10,7 @@ export async function fetchUserProfile(telegramId = 100001): Promise<{ user: Use
             body: JSON.stringify({ telegram_id: telegramId })
         });
         if (res.ok) return await res.json();
-    } catch (_) { /* ignored */ }
+    } catch (_) {  }
 
     return {
         user: {
@@ -49,7 +49,7 @@ export async function fetchTrailNodes(): Promise<TrailNode[]> {
             const data = await res.json();
             return data.nodes;
         }
-    } catch (_) { /* ignored */ }
+    } catch (_) {  }
 
     return [
         { id: 1, node_key: 'shulgan_1', title: 'Вход в пещеру: Сәләмләү', biome: 'shulgan-tash', order_index: 1, icon: 'cave', lesson_type: 'lesson', status: 'completed' },
@@ -67,7 +67,7 @@ export async function fetchQuestions(nodeId: number): Promise<Question[]> {
             const data = await res.json();
             if (data.questions && data.questions.length > 0) return data.questions;
         }
-    } catch (_) { /* ignored */ }
+    } catch (_) {  }
 
     return [
         { id: 101, node_id: nodeId, type: 'word_match', prompt_ba: 'Һаумыһығыҙ', prompt_ru: 'Здравствуйте (уважительно)', audio_text: 'Һаумыһығыҙ', correct_answer: 'Здравствуйте', options: ['Здравствуйте', 'До свидания', 'Спасибо', 'Пожалуйста'] },
@@ -85,7 +85,7 @@ export async function submitLessonResults(userId: number, nodeId: number, correc
             body: JSON.stringify({ user_id: userId, node_id: nodeId, correct_count: correct, total_count: total })
         });
         if (res.ok) return await res.json();
-    } catch (_) { /* ignored */ }
+    } catch (_) {  }
     return { honey_reward: correct * 4, xp_reward: correct * 10, accuracy: 100 };
 }
 
@@ -96,7 +96,7 @@ export async function fetchDailyFragment(): Promise<TranslationFragment | null> 
             const data = await res.json();
             return data.fragment || null;
         }
-    } catch (_) { /* ignored */ }
+    } catch (_) {  }
     return {
         id: 1,
         fragment_id: 'FRAG_001',
@@ -118,7 +118,7 @@ export async function voteTranslation(userId: number, fragmentId: number, action
             body: JSON.stringify({ user_id: userId, fragment_id: fragmentId, action, suggested_text: text })
         });
         return res.ok;
-    } catch (_) { /* ignored */ }
+    } catch (_) {  }
     return true;
 }
 
@@ -126,7 +126,7 @@ export async function fetchLeaderboards(): Promise<{ users: LeaderboardUser[]; s
     try {
         const res = await fetch(`${API_BASE}/leaderboard`);
         if (res.ok) return await res.json();
-    } catch (_) { /* ignored */ }
+    } catch (_) {  }
 
     return {
         users: [
@@ -150,7 +150,7 @@ export async function buyShopItem(userId: number, itemId: string): Promise<boole
             body: JSON.stringify({ user_id: userId, item_id: itemId })
         });
         return res.ok;
-    } catch (_) { /* ignored */ }
+    } catch (_) {  }
     return true;
 }
 
@@ -165,6 +165,6 @@ export async function askAi(question: string, context?: string): Promise<string>
             const data = await res.json();
             return data.answer || 'Ответ не получен';
         }
-    } catch (_) { /* ignored */ }
+    } catch (_) {  }
     return 'Башҡорт телендә үндәшлек (сингармонизм) законы буйынса һүҙҙәр ҡалын йәки йомшаҡ булып бүленә.';
 }

@@ -15,17 +15,21 @@ const LOCAL_FALLBACKS: Record<string, string> = {
     'default': '«Тел-Остаһы» кәңәше: Башҡорт телен өйрәнгәндә 9 үҙенсәлекле хәрефте (ә, ө, ү, ҡ, ғ, ҙ, ҫ, һ, ң) дөрөҫ әйтергә һәм яҙырға өйрәнеү бик мөһим!'
 };
 
+function sanitize(text: string): string {
+    return text.replace(/deepseek/gi, 'Basklingo AI');
+}
+
 export async function askAiTutor(question: string, context?: string): Promise<string> {
     const qLower = question.toLowerCase();
     for (const [key, fallback] of Object.entries(LOCAL_FALLBACKS)) {
-        if (key !== 'default' && qLower.includes(key)) return fallback;
+        if (key !== 'default' && qLower.includes(key)) return sanitize(fallback);
     }
 
-    let delay = 300;
-    for (let attempt = 0; attempt < 3; attempt++) {
+    let delay = 100;
+    for (let attempt = 0; attempt < 2; attempt++) {
         try {
             const controller = new AbortController();
-            const timeout = setTimeout(() => controller.abort(), 6000);
+            const timeout = setTimeout(() => controller.abort(), 3500);
             const response = await fetch(`${BASE_URL}/chat/completions`, {
                 method: 'POST',
                 headers: {
@@ -36,23 +40,25 @@ export async function askAiTutor(question: string, context?: string): Promise<st
                     model: MODEL_ID,
                     messages: [
                         { role: 'system', content: SYSTEM_PROMPT },
-                        { role: 'user', content: context ? `Контекст урока: ${context}\nВопрос ученика: ${question}` : question }
+                        { role: 'user', content: context ? `Контекст: ${context}\nВопрос: ${question}` : question }
                     ],
                     temperature: 0.3,
-                    max_tokens: 350
+                    max_tokens: 1500
                 }),
                 signal: controller.signal
             });
             clearTimeout(timeout);
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
-            const data = await response.json() as { choices?: Array<{ message?: { content?: string } }> };
-            const answer = data.choices?.[0]?.message?.content?.trim();
-            if (answer) return answer;
+            const data = await response.json() as { choices?: Array<{ message?: { content?: string; reasoning?: string } }> };
+            let answer = data.choices?.[0]?.message?.content?.trim();
+            if (!answer && data.choices?.[0]?.message?.reasoning) {
+                answer = data.choices[0].message.reasoning.trim();
+            }
+            if (answer) return sanitize(answer);
         } catch (_) {
-            /* ignored */
             await new Promise(r => setTimeout(r, delay));
             delay *= 2;
         }
     }
-    return LOCAL_FALLBACKS['default'];
+    return sanitize(LOCAL_FALLBACKS['default']);
 }

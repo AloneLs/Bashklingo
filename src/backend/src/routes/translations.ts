@@ -109,7 +109,7 @@ export async function handleTranslationExport(req: Request): Promise<Response> {
         }
 
         if (format === 'csv') {
-            let csv = 'fragment_id,text_ba,lang_pair,translation,source,chapter,timecode,confirmed,status,expert_notes\n';
+            let csv = '\uFEFFfragment_id,text_ba,lang_pair,translation,source,chapter,timecode,confirmed,status,expert_notes\n';
             for (const r of rows) {
                 const textBa = `"${String(r.text_ba || '').replace(/"/g, '""')}"`;
                 const textTr = `"${String(r.translation || '').replace(/"/g, '""')}"`;

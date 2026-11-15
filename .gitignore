@@ -17,6 +17,10 @@ node_modules/
 # Production & Build Outputs
 dist/
 */dist/
+tests/
+*/tests/
+scripts/
+*/scripts/
 build/
 .output/
 .vite/

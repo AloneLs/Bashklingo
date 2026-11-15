@@ -34,7 +34,7 @@ export function AiTutorModal() {
                         </div>
                         <div>
                             <div style={{ fontSize: '16px', fontWeight: 900, color: '#0F172A' }}>«Тел-Остаһы»</div>
-                            <div style={{ fontSize: '11px', color: '#16A34A', fontWeight: 700 }}>AI-тьютор (DeepSeek V4.1)</div>
+                            <div style={{ fontSize: '11px', color: '#16A34A', fontWeight: 700 }}>AI-тьютор · Сингармонизм</div>
                         </div>
                     </div>
                     <button

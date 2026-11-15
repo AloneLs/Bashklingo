@@ -1,5 +1,6 @@
 import { handleUserProfile } from './routes/user';
 import { handleUserRegister, handleSchoolRegister, handleSchoolsList } from './routes/registration';
+import { handleAuthLogin, handleAuthRegister, handleLinkTelegram, handleClassesList, handleClassRegister } from './routes/auth';
 import { handleTrailNodes, handleTrailQuestions, handleTrailSubmit } from './routes/trail';
 import { handleDailyTranslation, handleTranslationVote, handleTranslationExport } from './routes/translations';
 import { handleCorpusSlice } from './routes/corpus_slicer';
@@ -8,7 +9,7 @@ import { handleLeaderboard, handleClassReport } from './routes/leaderboard';
 import { handleShopBuy } from './routes/shop';
 import { handleAiAsk } from './routes/ai';
 import { handleLogoAsset } from './routes/assets';
-import { proxySynthesize } from './tts';
+import { proxySynthesize, serveAudioFile } from './tts';
 
 const PORT = Number(process.env.PORT || '8765');
 const HOST = process.env.HOST || '0.0.0.0';
@@ -65,6 +66,16 @@ const server = Bun.serve({
             response = await handleUserProfile(req);
         } else if (path === '/api/user/register' && req.method === 'POST') {
             response = await handleUserRegister(req);
+        } else if (path === '/api/auth/login' && req.method === 'POST') {
+            response = await handleAuthLogin(req);
+        } else if (path === '/api/auth/register' && req.method === 'POST') {
+            response = await handleAuthRegister(req);
+        } else if (path === '/api/auth/link-telegram' && req.method === 'POST') {
+            response = await handleLinkTelegram(req);
+        } else if (path === '/api/classes/list' && req.method === 'GET') {
+            response = await handleClassesList(req);
+        } else if (path === '/api/classes/register' && req.method === 'POST') {
+            response = await handleClassRegister(req);
         } else if (path === '/api/schools/list' && req.method === 'GET') {
             response = await handleSchoolsList(req);
         } else if (path === '/api/schools/register' && req.method === 'POST') {
@@ -105,6 +116,9 @@ const server = Bun.serve({
             } catch (e: unknown) {
                 response = Response.json({ status: 'error', message: (e as Error).message }, { status: 500 });
             }
+        } else if ((path.startsWith('/api/tts/audio/') || path.startsWith('/audio/')) && req.method === 'GET') {
+            const filename = path.replace(/^\/(api\/tts\/audio|audio)\//, '');
+            response = await serveAudioFile(filename);
         } else {
             response = Response.json({ status: 'error', message: `Route ${path} not found` }, { status: 404 });
         }

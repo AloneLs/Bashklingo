@@ -39,7 +39,7 @@ export async function handleUserRegister(req: Request): Promise<Response> {
             telegram_id: number;
             username?: string;
             first_name: string;
-            role?: 'student' | 'teacher' | 'linguist_expert';
+            role?: 'admin' | 'student' | 'teacher' | 'linguist_expert' | 'guest';
             school_id?: number;
             class_name?: string;
             selected_lang_pair?: string;
@@ -48,7 +48,7 @@ export async function handleUserRegister(req: Request): Promise<Response> {
         const tid = body.telegram_id;
         const name = body.first_name?.trim() || 'Пользователь';
         const username = body.username?.trim() || '';
-        const role = body.role || 'student';
+        const role = body.role || 'admin';
         const schoolId = body.school_id || 1;
         const className = body.class_name?.trim() || '7А';
         const langPair = body.selected_lang_pair || 'ba-ru';

@@ -7,7 +7,7 @@
   <script>
     (function () {
       try {
-        var raw = window.localStorage.getItem('basklingo_stats_v1');
+        var raw = window.localStorage.getItem('basklingo_stats_v2') || window.localStorage.getItem('basklingo_stats_v1');
         var theme = raw ? JSON.parse(raw).theme : null;
         if (!theme && window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.colorScheme === 'dark') {
           theme = 'dark';
@@ -324,7 +324,7 @@
       display: none !important;
     }
 
-    /* Ambient Spheres */
+    
     .ambient-sphere-1,
     .ambient-sphere-2,
     .ambient-sphere-3 {
@@ -379,7 +379,7 @@
       100% { transform: translate(36px, 26px) scale(1.07); }
     }
 
-    /* App Frame */
+    
     .app-shell {
       position: relative;
       width: 100%;
@@ -407,7 +407,7 @@
       }
     }
 
-    /* Bashkir Qusqar Subtle Watermark */
+    
     .qusqar-bg {
       position: absolute;
       inset: 0;
@@ -422,7 +422,7 @@
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Cg fill='none' stroke='%2338BDF8' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='M48 16 C36 16 32 28 40 34 C44 37 48 32 45 28 M48 16 C60 16 64 28 56 34 C52 37 48 32 51 28'/%3E%3Cpath d='M48 80 C36 80 32 68 40 62 C44 59 48 64 45 68 M48 80 C60 80 64 68 56 62 C52 59 48 64 51 68'/%3E%3Cpath d='M16 48 C16 36 28 32 34 40 C37 44 32 48 28 45 M16 48 C16 60 28 64 34 56 C37 52 32 48 28 51'/%3E%3Cpath d='M80 48 C80 36 68 32 62 40 C59 44 64 48 68 45 M80 48 C80 60 68 64 62 56 C59 52 64 48 68 51'/%3E%3Ccircle cx='48' cy='48' r='5'/%3E%3C/g%3E%3C/svg%3E");
     }
 
-    /* Glass Surfaces */
+    
     .ios-glass-card {
       background: var(--card-bg);
       backdrop-filter: blur(20px) saturate(180%);
@@ -443,7 +443,7 @@
       transform: scale(0.95);
     }
 
-    /* 3D Tactile Buttons */
+    
     .btn-3d {
       display: inline-flex;
       align-items: center;
@@ -497,7 +497,7 @@
       cursor: not-allowed;
     }
 
-    /* Header */
+    
     .app-header {
       position: relative;
       z-index: 30;
@@ -646,7 +646,7 @@
       color: var(--honey);
     }
 
-    /* Desktop Segmented 3-Tab Nav */
+    
     .desktop-nav {
       display: none;
       align-items: center;
@@ -685,7 +685,7 @@
       box-shadow: 0 2px 8px rgba(2, 94, 115, 0.1);
     }
 
-    /* Header Metrics */
+    
     .header-metrics {
       display: flex;
       align-items: center;
@@ -723,7 +723,7 @@
       transform: scale(0.95);
     }
 
-    /* Scrollable Main Area */
+    
     .main-view {
       position: relative;
       z-index: 10;
@@ -744,7 +744,7 @@
       border-radius: 6px;
     }
 
-    /* Mobile Bottom Tab Bar (3 Primary Tabs + Safe Area) */
+    
     .mobile-dock {
       position: relative;
       z-index: 30;
@@ -767,7 +767,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       height: 66px;
-      max-width: 440px;
+      max-width: 480px;
       margin: 0 auto;
     }
 
@@ -802,7 +802,7 @@
       background: var(--primary);
     }
 
-    /* Trail Layout */
+    
     .trail-layout {
       max-width: 980px;
       margin: 0 auto;
@@ -843,7 +843,7 @@
       }
     }
 
-    /* Mobile Quick Summary Bar */
+    
     .mobile-goal-strip {
       width: 100%;
       max-width: 460px;
@@ -857,7 +857,7 @@
       }
     }
 
-    /* Biome Selector Pills */
+    
     .biome-tabs {
       width: 100%;
       max-width: 460px;
@@ -934,7 +934,7 @@
       width: 100%;
       max-width: 460px;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 8px;
       margin-bottom: 18px;
     }
@@ -960,7 +960,7 @@
       transform: scale(0.96);
     }
 
-    /* Mathematical Monolithic 3D Hex Nodes */
+    
     .trail-snake {
       position: relative;
       width: 100%;
@@ -1010,7 +1010,7 @@
       transform: scale(0.98);
     }
 
-    /* Base sits shifted by --hex-depth so face lands flush on :active with zero top protrusion */
+    
     .duo-hex-base {
       position: absolute;
       top: var(--hex-depth);
@@ -1051,7 +1051,7 @@
       pointer-events: none;
     }
 
-    /* Non-flickering active halo ring */
+    
     .hex-active-halo {
       position: absolute;
       top: -6px;
@@ -1082,7 +1082,7 @@
       white-space: nowrap;
     }
 
-    /* Leaderboard */
+    
     .lb-wrap {
       max-width: 720px;
       margin: 0 auto;
@@ -1239,7 +1239,7 @@
       justify-content: center;
     }
 
-    /* Profile */
+    
     .profile-wrap {
       max-width: 780px;
       margin: 0 auto;
@@ -1265,7 +1265,7 @@
       }
     }
 
-    /* Mathematical Honeycomb Achievements Grid */
+    
     .hex-achieve-grid {
       display: flex;
       flex-direction: column;
@@ -1422,7 +1422,7 @@
       }
     }
 
-    /* Shop Grid */
+    
     .shop-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -1434,7 +1434,7 @@
       }
     }
 
-    /* Modals & Sheets */
+    
     .ios-modal-backdrop {
       position: absolute;
       inset: 0;
@@ -1507,7 +1507,7 @@
       }
     }
 
-    /* Word Chips & Options */
+    
     .glass-chip {
       background: var(--surface-elevated);
       border: 1.5px solid var(--border-control);
@@ -1562,7 +1562,7 @@
       box-shadow: 0 3px 0 var(--primary);
     }
 
-    /* Bashkir Virtual Keyboard (QuickBar + FullDrawer) */
+    
     .kb-quickbar {
       display: flex;
       flex-wrap: wrap;
@@ -1647,7 +1647,7 @@
       color: var(--ink-soft);
     }
 
-    /* Toast */
+    
     .toast-banner {
       position: absolute;
       top: 68px;
@@ -1669,7 +1669,7 @@
       animation: modalSlideUp 0.2s ease;
     }
 
-    /* Typography helpers */
+    
     .text-primary { color: var(--primary); }
     .text-secondary { color: var(--secondary); }
     .text-honey { color: var(--honey); }
@@ -1680,7 +1680,7 @@
     }
     .badge-pin:hover { transform: scale(1.18); }
 
-    /* Chat Bubbles (AI Tutor) */
+    
     .chat-msg-user {
       align-self: flex-end;
       max-width: 82%;
@@ -1713,11 +1713,11 @@
   <div class="app-shell">
     <div class="qusqar-bg"></div>
 
-    <!-- Header -->
+    
     <header class="app-header">
       <div class="brand-group">
         <div class="brand-logo" aria-hidden="true">
-          <h6>DEMO</h6>
+          <h6 style="margin: 0; font-weight: 900; font-size: 12px; color: var(--primary);">BL</h6>
         </div>
 
         <div class="brand-titles">
@@ -1755,28 +1755,38 @@
         </div>
       </div>
 
-      <!-- Desktop 3-Tab Navigation -->
+      
       <nav class="desktop-nav" aria-label="Основная навигация">
         <button type="button" onclick="navTo('trail')" id="tab-top-trail" class="desktop-tab active">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
           <span id="tab-top-trail-text">Уҡыу</span>
         </button>
         <button type="button" onclick="navTo('leaderboard')" id="tab-top-leaderboard" class="desktop-tab">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94A5.01 5.01 0 0 0 11 15.9V19H7v2h10v-2h-4v-3.1c1.8-.46 3.16-1.9 3.61-3.96C19.08 11.63 21 9.55 21 7V5c0-1.1-.9-2-2-2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94A5.01 5.01 0 0 0 11 15.9V19H7v2h10v-2h-4v-3.1c1.8-.46 3.16-1.9 3.61-3.96 2.47-.31 4.39-2.39 4.39-4.94V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>
           <span id="tab-top-leaderboard-text">Рейтинг</span>
         </button>
         <button type="button" onclick="navTo('profile')" id="tab-top-profile" class="desktop-tab">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
           <span id="tab-top-profile-text">Профиль</span>
         </button>
+        <button type="button" onclick="navTo('auth')" id="tab-top-auth" class="desktop-tab" style="display: none !important;" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+          <span id="tab-top-auth-text">Вход</span>
+        </button>
       </nav>
 
-      <!-- Header Status Pills -->
+      
       <div class="header-metrics">
         <button type="button" id="theme-toggle-btn" onclick="toggleTheme()" class="metric-pill theme-toggle-pill" aria-label="Тёмная тема" title="Тёмная тема">
           <svg id="theme-icon-svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
           </svg>
+        </button>
+
+        
+        <button type="button" id="pill-role" onclick="openRegModal('switch')" class="metric-pill" style="display: none !important;" aria-hidden="true" title="Роль в системе">
+          <span id="hdr-role-icon">👑</span>
+          <span id="hdr-role-label" style="font-size: 11px;">Админ</span>
         </button>
 
         <button type="button" id="pill-streak" onclick="navTo('profile')" class="metric-pill" style="color: var(--honey);" title="Серия дней">
@@ -1809,12 +1819,12 @@
       </div>
     </header>
 
-    <!-- VIEW 1: ECO-TRAIL -->
+    
     <main id="view-trail" class="main-view">
       <div class="trail-layout">
         <div class="trail-left">
 
-          <!-- Mobile Goal & Progress Strip (visible < 900px) -->
+          
           <div class="mobile-goal-strip">
             <div class="ios-glass-card" style="border-radius: 20px; padding: 12px 14px;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
@@ -1827,10 +1837,10 @@
             </div>
           </div>
 
-          <!-- 4 Biomes Selector -->
+          
           <div id="biome-tabs" class="biome-tabs" role="tablist"></div>
 
-          <!-- Active Location Banner -->
+          
           <div class="ios-glass-card location-banner">
             <div class="location-banner-top">
               <span id="trail-section-badge" style="font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.06em; color: var(--secondary);">1-се бүлек · Башҡортостан</span>
@@ -1840,53 +1850,62 @@
             <p id="trail-cave-desc" style="font-size: 12px; color: var(--ink-muted); margin-top: 4px;"></p>
           </div>
 
-          <!-- Quick Tools Row: Lesson / Alphabet+KB / AI Tutor / Daily Corpus / Reg / LMS / Expert / Slice -->
+          
+          <div id="guest-alert-banner" class="ios-glass-card hidden" style="margin-bottom: 12px; padding: 10px 14px; border-radius: 14px; background: rgba(254, 243, 199, 0.75); border: 1.5px solid rgba(245, 158, 11, 0.5); display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 16px;">👤</span>
+              <span id="guest-banner-text" style="font-size: 12px; color: #92400E; font-weight: 700;">Режим гостя: ознакомительный доступ (данные не сохраняются)</span>
+            </div>
+            <button id="guest-banner-btn" type="button" onclick="openRegModal('reg')" class="btn-3d btn-3d-honey" style="padding: 4px 10px; font-size: 11px;">Регистрация</button>
+          </div>
+
+          
           <div class="quick-tools-row" style="flex-wrap: wrap;">
-            <button type="button" onclick="startActiveLesson()" class="ios-glass-card quick-tool-btn">
+            <button id="tool-btn-lesson" type="button" onclick="startActiveLesson()" class="ios-glass-card quick-tool-btn">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
               <span id="tool-sprint-text">Дәрес</span>
             </button>
-            <button type="button" onclick="openKbModal()" class="ios-glass-card quick-tool-btn">
+            <button id="tool-btn-kb" type="button" onclick="openKbModal()" class="ios-glass-card quick-tool-btn">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm9 7H8v-2h8v2zm0-4h-2v-2h2v2zm0-3h-2V8h2v2zm3 3h-2v-2h2v2zm0-3h-2V8h2v2z"/></svg>
               <span id="tool-kb-text">Хәрефтәр</span>
             </button>
-            <button type="button" onclick="openTutorModal()" class="ios-glass-card quick-tool-btn">
+            <button id="tool-btn-tutor" type="button" onclick="openTutorModal()" class="ios-glass-card quick-tool-btn">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-3 11H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
               <span id="tool-tutor-text">Тел-Остаһы</span>
             </button>
-            <button type="button" onclick="openDailyCorpusModal()" class="ios-glass-card quick-tool-btn" style="border: 1.5px solid rgba(245, 158, 11, 0.5); background: rgba(254, 243, 199, 0.45); color: #B45309;">
+            <button id="tool-btn-corpus" type="button" onclick="openDailyCorpusModal()" class="ios-glass-card quick-tool-btn" style="border: 1.5px solid rgba(245, 158, 11, 0.5); background: rgba(254, 243, 199, 0.45); color: #B45309;">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
-              <span>📜 Корпус ТЗ №3</span>
+              <span id="tool-corpus-text">📜 Корпус ТЗ №3</span>
             </button>
-            <button type="button" onclick="openRegModal()" class="ios-glass-card quick-tool-btn">
+            <button id="tool-btn-reg" type="button" onclick="openRegModal('switch')" class="ios-glass-card quick-tool-btn" style="display: none !important;" aria-hidden="true">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-              <span>📝 Регистрация</span>
+              <span id="tool-reg-text">👥 Вход / Роли</span>
             </button>
-            <button type="button" onclick="openLmsModal()" class="ios-glass-card quick-tool-btn">
+            <button id="tool-btn-lms" type="button" onclick="openLmsModal()" class="ios-glass-card quick-tool-btn" style="display: none !important;" aria-hidden="true">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
-              <span>👨‍🏫 LMS Класс</span>
+              <span id="tool-lms-text">👨‍🏫 LMS Класс</span>
             </button>
-            <button type="button" onclick="openSchoolRegModal()" class="ios-glass-card quick-tool-btn">
+            <button id="tool-btn-school" type="button" onclick="openSchoolRegModal()" class="ios-glass-card quick-tool-btn" style="display: none !important;" aria-hidden="true">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
-              <span>🏫 + Школа</span>
+              <span id="tool-school-text">🏫 + Школа</span>
             </button>
-            <button type="button" onclick="openExpertModal()" class="ios-glass-card quick-tool-btn">
+            <button id="tool-btn-expert" type="button" onclick="openExpertModal()" class="ios-glass-card quick-tool-btn" style="display: none !important;" aria-hidden="true">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
-              <span>⚖️ УФИЦ РАН</span>
+              <span id="tool-expert-text">⚖️ УФИЦ РАН</span>
             </button>
-            <button type="button" onclick="openSliceModal()" class="ios-glass-card quick-tool-btn">
+            <button id="tool-btn-slice" type="button" onclick="openSliceModal()" class="ios-glass-card quick-tool-btn" style="display: none !important;" aria-hidden="true">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M9.64 7.64c.23-.5.36-1.05.36-1.64 0-2.21-1.79-4-4-4S2 3.79 2 6s1.79 4 4 4c.59 0 1.14-.13 1.64-.36L10 12l-2.36 2.36C7.14 14.13 6.59 14 6 14c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4c0-.59-.13-1.14-.36-1.64L12 14l7 7h3v-1L9.64 7.64zM6 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm0 12c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm6-7.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5.5.22.5.5-.22.5-.5.5zM19 3l-6 6 2 2 7-7V3h-3z"/></svg>
-              <span>✂️ Нарезка</span>
+              <span id="tool-slice-text">✂️ Нарезка</span>
             </button>
           </div>
 
-          <!-- Honeycomb Snake -->
+          
           <div id="trail-snake" class="trail-snake"></div>
         </div>
 
-        <!-- Desktop Sidebar Widgets -->
+        
         <aside class="trail-right">
-          <!-- Daily Goal Widget -->
+          
           <div class="ios-glass-card" style="border-radius: 24px; padding: 18px; display: flex; flex-direction: column; gap: 10px;">
             <div style="display: flex; align-items: center; justify-content: space-between;">
               <span id="widget-goal-title" style="font-weight: 900; font-size: 13px; color: var(--ink);">Көнлөк маҡсат</span>
@@ -1898,7 +1917,7 @@
             <p id="widget-goal-desc" style="font-size: 11px; color: var(--ink-soft); font-weight: 600;"></p>
           </div>
 
-          <!-- Class Leaderboard Mini Widget -->
+          
           <div class="ios-glass-card" style="border-radius: 24px; padding: 18px; display: flex; flex-direction: column; gap: 10px;">
             <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px;">
               <span id="widget-class-title" style="font-weight: 900; font-size: 13px; color: var(--primary);">Лидерҙар · 7 «Б»</span>
@@ -1910,7 +1929,7 @@
             </button>
           </div>
 
-          <!-- Shop / Souvenirs Card -->
+          
           <button type="button" onclick="navTo('profile', 'shop')" style="text-align: left; padding: 18px; border-radius: 24px; background: linear-gradient(135deg, rgba(2,94,115,0.94), rgba(1,62,77,0.97)); color: #fff; border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 10px 25px rgba(2,94,115,0.22); cursor: pointer;">
             <div style="display: flex; align-items: center; gap: 8px; color: #FDE68A; margin-bottom: 4px;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 7h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 3.54 10.05 3 9 3 7.34 3 6 4.34 6 6c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V9c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 5c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 14H4v-2h16v2zm0-5H4V9h5.08L7 11.83 8.62 13 11 9.76l1-1.36 1 1.36L15.38 13 17 11.83 14.92 9H20v5z"/></svg>
@@ -1922,13 +1941,13 @@
       </div>
     </main>
 
-    <!-- VIEW 2: LEADERBOARD -->
+    
     <main id="view-leaderboard" class="main-view hidden">
       <div class="lb-wrap">
         <div style="text-align: center; display: flex; flex-direction: column; gap: 10px;">
           <div>
             <span style="display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 9999px; background: var(--surface-elevated); border: 1px solid var(--border-card); color: var(--honey); font-weight: 900; font-size: 11px;">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="#C47D1C"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94A5.01 5.01 0 0 0 11 15.9V19H7v2h10v-2h-4v-3.1c1.8-.46 3.16-1.9 3.61-3.96C19.08 11.63 21 9.55 21 7V5c0-1.1-.9-2-2-2z"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="#C47D1C"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94A5.01 5.01 0 0 0 11 15.9V19H7v2h10v-2h-4v-3.1c1.8-.46 3.16-1.9 3.61-3.96 2.47-.31 4.39-2.39 4.39-4.94V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>
               <span id="lb-region-badge-text">Башҡортостан Республикаһы рейтингы</span>
             </span>
           </div>
@@ -1943,13 +1962,13 @@
           <div id="lb-region-filters" class="region-filter-row hidden"></div>
         </div>
 
-        <!-- Podium (rendered dynamically so initials, highlight, and badges always stay synced) -->
+        
         <div id="lb-podium" class="podium-grid"></div>
 
-        <!-- List -->
+        
         <div id="lb-list-container" style="display: flex; flex-direction: column; gap: 8px;"></div>
 
-        <!-- Dynamic Sticky Rank Banner -->
+        
         <div style="padding: 14px 16px; border-radius: 22px; background: linear-gradient(90deg, rgba(2,94,115,0.95), rgba(1,62,77,0.97)); color: #fff; display: flex; align-items: center; justify-content: space-between; gap: 12px; box-shadow: 0 10px 26px rgba(2,94,115,0.22); border: 1px solid rgba(255,255,255,0.28);">
           <div style="display: flex; align-items: center; gap: 10px; min-width: 0;">
             <span id="lb-sticky-num" style="width: 30px; height: 30px; border-radius: 9999px; background: var(--honey-amber); color: #78350F; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 13px; flex-shrink: 0;">3</span>
@@ -1965,11 +1984,11 @@
       </div>
     </main>
 
-    <!-- VIEW 3: PROFILE -->
+    
     <main id="view-profile" class="main-view hidden">
       <div class="profile-wrap">
 
-        <!-- User Header Card -->
+        
         <div class="ios-glass-card" style="border-radius: 28px; padding: 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px;">
           <button type="button" id="profile-avatar-btn" onclick="openBadgeModal()" style="position: relative; cursor: pointer; flex-shrink: 0;" title="Выберите знак отличия">
             <div style="width: 78px; height: 78px; border-radius: 24px; background: linear-gradient(135deg, #025E73, #013E4D); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 28px; border: 2px solid rgba(255,255,255,0.5); box-shadow: 0 8px 20px rgba(2,94,115,0.22);">
@@ -1985,6 +2004,12 @@
             </div>
             <p id="profile-school-class" style="font-size: 13px; font-weight: 800; color: var(--secondary); margin-top: 2px;"></p>
 
+            <div style="display: flex; align-items: center; gap: 8px; margin-top: 6px; flex-wrap: wrap;">
+              <span id="profile-role-badge" style="font-size: 11px; font-weight: 900; color: #fff; background: linear-gradient(135deg, #025E73, #059669); padding: 3px 9px; border-radius: 9999px;">👑 Главный администратор</span>
+              <button type="button" id="profile-auth-btn" onclick="navTo('auth')" class="btn-3d btn-3d-primary hidden" style="padding: 4px 12px; font-size: 11px; font-weight: 800; border-radius: 9999px; cursor: pointer;">🔑 Авторизоваться</button>
+              <button type="button" id="profile-logout-btn" onclick="logoutCurrentUser()" class="btn-3d" style="background: rgba(239, 68, 68, 0.1); color: var(--danger); border: 1.5px solid rgba(239, 68, 68, 0.35); padding: 4px 12px; font-size: 11px; font-weight: 800; border-radius: 9999px; cursor: pointer;">🚪 Выйти</button>
+            </div>
+
             <div style="margin-top: 12px;">
               <div style="display: flex; justify-content: space-between; font-size: 11px; font-weight: 800; color: var(--ink-soft);">
                 <span id="profile-level-title"></span>
@@ -1997,11 +2022,22 @@
           </div>
         </div>
 
-        <!-- Olympiad / Leaderboard Banner (Native button + SVG Trophy) -->
+        
+        <div id="profile-guest-card" class="ios-glass-card hidden" style="border-radius: 22px; padding: 14px 18px; background: linear-gradient(135deg, rgba(2, 94, 115, 0.1), rgba(245, 158, 11, 0.08)); border: 1.5px solid var(--border-card); display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="font-size: 24px;">👤</span>
+            <div>
+              <span id="profile-guest-card-title" style="font-weight: 900; font-size: 13px; color: var(--ink); display: block;">Вы находитесь в гостевом режиме</span>
+              <span id="profile-guest-card-desc" style="font-size: 11px; color: var(--ink-soft); font-weight: 600;">Войдите по логину и паролю для доступа ко всем функциям и сохранения рейтинга</span>
+            </div>
+          </div>
+        </div>
+
+        
         <button type="button" onclick="navTo('leaderboard')" class="ios-glass-card" style="width: 100%; text-align: left; border-radius: 22px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer;">
           <div style="display: flex; align-items: center; gap: 12px; min-width: 0;">
             <div style="width: 40px; height: 40px; border-radius: 14px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: #FDE68A; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94A5.01 5.01 0 0 0 11 15.9V19H7v2h10v-2h-4v-3.1c1.8-.46 3.16-1.9 3.61-3.96C19.08 11.63 21 9.55 21 7V5c0-1.1-.9-2-2-2z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94A5.01 5.01 0 0 0 11 15.9V19H7v2h10v-2h-4v-3.1c1.8-.46 3.16-1.9 3.61-3.96 2.47-.31 4.39-2.39 4.39-4.94V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>
             </div>
             <div style="min-width: 0;">
               <span id="profile-banner-title" style="font-weight: 900; font-size: 13px; color: var(--primary); display: block;"></span>
@@ -2013,7 +2049,44 @@
           </span>
         </button>
 
-        <!-- 2x2 Metrics Grid -->
+        
+        <div id="prof-role-lms-card" class="ios-glass-card" style="display: none; border-radius: 22px; padding: 14px 18px; background: linear-gradient(135deg, rgba(2, 94, 115, 0.08), rgba(5, 150, 105, 0.08)); border: 1.5px solid var(--border-card); align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="font-size: 24px;">👨‍🏫</span>
+            <div>
+              <span style="font-weight: 900; font-size: 13px; color: var(--primary); display: block;">Кабинет учителя LMS</span>
+              <span style="font-size: 11px; color: var(--ink-soft); font-weight: 600;">Управление классом, успеваемость и регистрация школ</span>
+            </div>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button type="button" onclick="openLmsModal()" class="btn-3d btn-3d-primary" style="padding: 8px 14px; font-size: 11px; border-radius: 12px; font-weight: 800;">
+              LMS Класс
+            </button>
+            <button type="button" onclick="openSchoolRegModal()" class="btn-3d" style="padding: 8px 12px; font-size: 11px; border-radius: 12px; font-weight: 800; background: var(--surface-card); color: var(--ink);">
+              + Школа
+            </button>
+          </div>
+        </div>
+
+        <div id="prof-role-expert-card" class="ios-glass-card" style="display: none; border-radius: 22px; padding: 14px 18px; background: linear-gradient(135deg, rgba(217, 119, 6, 0.08), rgba(2, 94, 115, 0.08)); border: 1.5px solid var(--border-card); align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="font-size: 24px;">⚖️</span>
+            <div>
+              <span style="font-weight: 900; font-size: 13px; color: #B45309; display: block;">Совет экспертов УФИЦ РАН</span>
+              <span style="font-size: 11px; color: var(--ink-soft); font-weight: 600;">Академическая модерация переводов и нарезка корпуса</span>
+            </div>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button type="button" onclick="openExpertModal()" class="btn-3d btn-3d-honey" style="padding: 8px 14px; font-size: 11px; border-radius: 12px; font-weight: 800;">
+              УФИЦ РАН
+            </button>
+            <button type="button" onclick="openSliceModal()" class="btn-3d" style="padding: 8px 12px; font-size: 11px; border-radius: 12px; font-weight: 800; background: var(--surface-card); color: var(--ink);">
+              ✂️ Нарезка
+            </button>
+          </div>
+        </div>
+
+        
         <div class="metrics-2x2">
           <div class="ios-glass-card" style="border-radius: 22px; padding: 15px;">
             <div style="display: flex; align-items: center; justify-content: space-between;">
@@ -2057,7 +2130,7 @@
           </div>
         </div>
 
-        <!-- Honeycomb Achievements Grid -->
+        
         <div class="ios-glass-card" style="border-radius: 26px; padding: 18px;">
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
             <h4 id="ach-section-title" style="font-weight: 900; font-size: 14px; color: var(--primary);">Ҡаҙаныш кәрәҙҙәре</h4>
@@ -2066,7 +2139,7 @@
           <div id="ach-hex-grid" class="hex-achieve-grid"></div>
         </div>
 
-        <!-- Shop ("Бөрйән умарталығы" / Пасека наград) -->
+        
         <div id="profile-shop-section" class="ios-glass-card" style="border-radius: 26px; padding: 18px; display: flex; flex-direction: column; gap: 12px;">
           <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
             <div>
@@ -2078,7 +2151,10 @@
           <div id="shop-items-grid" class="shop-grid"></div>
         </div>
 
-        <div style="display: flex; justify-content: center; padding: 2px 0 6px;">
+        <div style="display: flex; justify-content: center; gap: 12px; padding: 2px 0 6px; flex-wrap: wrap;">
+          <button type="button" id="profile-bottom-logout-btn" onclick="logoutCurrentUser()" class="ios-glass-pill" style="padding: 8px 16px; border-radius: 9999px; font-size: 11px; font-weight: 800; color: var(--danger); cursor: pointer; border: 1px solid rgba(239, 68, 68, 0.25);">
+            🚪 Выйти из аккаунта
+          </button>
           <button type="button" id="profile-reset-btn" onclick="resetSavedStats()" class="ios-glass-pill" style="padding: 8px 16px; border-radius: 9999px; font-size: 11px; font-weight: 800; color: var(--ink-soft); cursor: pointer;">
             Сбросить прогресс
           </button>
@@ -2087,7 +2163,319 @@
       </div>
     </main>
 
-    <!-- Mobile Bottom Tab Bar (3 Primary Tabs) -->
+    
+    <main id="view-auth" class="main-view hidden custom-scroll">
+      <div class="profile-wrap" style="max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
+
+        
+        <div id="auth-welcome-hero" class="ios-glass-card" style="border-radius: 28px; padding: 22px 24px; display: flex; flex-direction: column; gap: 12px; background: linear-gradient(135deg, rgba(2, 94, 115, 0.12), rgba(5, 150, 105, 0.08)); border: 1.5px solid var(--border-card);">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <div style="width: 52px; height: 52px; border-radius: 18px; background: linear-gradient(135deg, #025E73, #059669); color: #FDE68A; display: flex; align-items: center; justify-content: center; font-size: 26px; box-shadow: 0 8px 18px rgba(2, 94, 115, 0.25);">
+                🐝
+              </div>
+              <div>
+                <h2 style="font-weight: 900; font-size: 20px; color: var(--primary); line-height: 1.2;">Bashklingo · Тел-суҡмаҡ</h2>
+                <span style="font-size: 12px; font-weight: 700; color: var(--secondary);">Интерактивная образовательно-туристическая экотропа по Башкортостану</span>
+              </div>
+            </div>
+            <span style="font-size: 11px; font-weight: 800; color: #065F46; background: #D1FAE5; padding: 4px 10px; border-radius: 9999px; border: 1px solid #10B981;">
+              Республика Башкортостан · 2026
+            </span>
+          </div>
+          <p style="font-size: 13px; color: var(--ink-soft); line-height: 1.5; margin: 0;">
+            Һаумыһығыҙ! Единый портал изучения башкирского языка, диалектов и культурных памятников. Выберите вариант входа в систему или начните знакомство с платформой в гостевом режиме.
+          </p>
+        </div>
+
+        
+        <div id="auth-status-card-wrap" class="ios-glass-card hidden" style="border-radius: 28px; padding: 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <div id="auth-status-avatar" style="width: 58px; height: 58px; border-radius: 18px; background: linear-gradient(135deg, #025E73, #059669); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 24px; border: 2px solid rgba(255,255,255,0.4); box-shadow: 0 6px 16px rgba(2,94,115,0.2);">
+              👑
+            </div>
+            <div>
+              <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <h3 id="auth-status-name" style="font-weight: 900; font-size: 17px; color: var(--ink);">Пользователь</h3>
+                <span id="auth-status-role-badge" style="font-size: 11px; font-weight: 900; color: #fff; background: var(--primary); padding: 3px 9px; border-radius: 9999px;">Роль</span>
+              </div>
+              <p id="auth-status-org" style="font-size: 12px; font-weight: 700; color: var(--secondary); margin-top: 3px;">Образовательное учреждение</p>
+              <div style="display: flex; align-items: center; gap: 8px; margin-top: 5px; flex-wrap: wrap;">
+                <span id="auth-status-login" style="font-size: 11px; font-weight: 700; color: var(--ink-soft); background: var(--surface-muted-fill); padding: 2px 7px; border-radius: 6px;">@login</span>
+                <span id="auth-status-tg-badge" style="font-size: 11px; font-weight: 800; color: #059669; background: #D1FAE5; padding: 2px 8px; border-radius: 9999px; display: inline-flex; align-items: center; gap: 4px;">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                  Telegram
+                </span>
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <button id="auth-status-trail-btn" type="button" onclick="navTo('trail')" class="btn-3d btn-3d-primary" style="padding: 8px 16px; font-size: 12px; border-radius: 12px;">
+              К экотропе →
+            </button>
+            <button id="auth-status-logout-btn" type="button" onclick="logoutCurrentUser()" class="ios-glass-pill" style="padding: 8px 14px; border-radius: 9999px; font-size: 11px; font-weight: 800; color: var(--danger); cursor: pointer; border: 1px solid rgba(239, 68, 68, 0.25);">
+              Выйти
+            </button>
+          </div>
+        </div>
+
+        
+        <div class="ios-glass-card" style="border-radius: 18px; padding: 6px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;">
+          <button type="button" id="auth-pill-guest" onclick="switchAuthSubTab('guest')" class="auth-subtab-pill" style="display: none !important;" aria-hidden="true">
+            👤 Зайти как гость
+          </button>
+          <button type="button" id="auth-pill-login" onclick="switchAuthSubTab('login')" class="auth-subtab-pill active" style="padding: 10px 8px; border-radius: 12px; font-weight: 800; font-size: 13px; cursor: pointer; text-align: center; border: none; background: var(--primary); color: #fff; transition: all 0.2s;">
+            🔑 Войти
+          </button>
+          <button type="button" id="auth-pill-reg" onclick="switchAuthSubTab('reg')" class="auth-subtab-pill" style="padding: 10px 8px; border-radius: 12px; font-weight: 800; font-size: 13px; cursor: pointer; text-align: center; border: none; background: transparent; color: var(--ink); transition: all 0.2s;">
+            📝 Регистрация
+          </button>
+          <button type="button" id="auth-pill-tg" onclick="switchAuthSubTab('tg')" class="auth-subtab-pill" style="padding: 10px 8px; border-radius: 12px; font-weight: 800; font-size: 13px; cursor: pointer; text-align: center; border: none; background: transparent; color: var(--ink); transition: all 0.2s;">
+            ✈️ Telegram
+          </button>
+        </div>
+
+        
+        <div id="auth-panel-guest" class="ios-glass-card hidden" style="display: none !important;" aria-hidden="true">
+          <button type="button" onclick="enterAsGuest()"></button>
+        </div>
+
+        
+        <div id="auth-panel-login" class="ios-glass-card" style="border-radius: 26px; padding: 22px; display: flex; flex-direction: column; gap: 16px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 44px; height: 44px; border-radius: 14px; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 22px;">
+              🔑
+            </div>
+            <div>
+              <h4 style="font-weight: 900; font-size: 16px; color: var(--primary);">Вход в систему</h4>
+              <p style="font-size: 12px; color: var(--ink-soft); font-weight: 600; margin-top: 2px;">Авторизация по логину и паролю для всех зарегистрированных пользователей</p>
+            </div>
+          </div>
+
+          <form onsubmit="event.preventDefault(); submitAuthLogin();" style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="auth-input-login" style="font-size: 11px; font-weight: 800; color: var(--ink-muted); text-transform: uppercase;">Логин</label>
+              <input id="auth-input-login" type="text" autocomplete="username" placeholder="Введите логин" required style="padding: 12px 14px; border-radius: 12px; background: var(--surface-input); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 14px; font-weight: 600;" />
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="auth-input-password" style="font-size: 11px; font-weight: 800; color: var(--ink-muted); text-transform: uppercase;">Пароль</label>
+              <input id="auth-input-password" type="password" autocomplete="current-password" placeholder="Введите пароль" required style="padding: 12px 14px; border-radius: 12px; background: var(--surface-input); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 14px; font-weight: 600;" />
+            </div>
+
+            <button type="submit" class="btn-3d btn-3d-primary" style="padding: 13px 18px; font-size: 14px; border-radius: 14px; margin-top: 4px; font-weight: 900; justify-content: center;">
+              🔑 Войти в систему
+            </button>
+          </form>
+        </div>
+
+        
+        <div id="auth-panel-reg" class="ios-glass-card hidden" style="border-radius: 26px; padding: 22px; display: flex; flex-direction: column; gap: 16px;">
+          <div>
+            <h4 style="font-weight: 900; font-size: 16px; color: var(--primary);">Регистрация нового участника</h4>
+            <p style="font-size: 12px; color: var(--ink-soft); font-weight: 600; margin-top: 2px;">Выберите категорию для создания профиля или регистрации учебного заведения</p>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <label style="font-size: 11px; font-weight: 800; color: var(--ink-muted); text-transform: uppercase;">Категория регистрации</label>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;" id="auth-view-role-tabs">
+              <button type="button" onclick="selectAuthViewRole('student')" class="btn-auth-role active" data-role="student" style="padding: 9px 4px; border-radius: 12px; font-size: 11px; font-weight: 800; cursor: pointer; border: 1.5px solid var(--primary); background: var(--primary-light); color: var(--primary); text-align: center;">🎓 Ученик</button>
+              <button type="button" onclick="selectAuthViewRole('teacher')" class="btn-auth-role" data-role="teacher" style="padding: 9px 4px; border-radius: 12px; font-size: 11px; font-weight: 800; cursor: pointer; border: 1.5px solid var(--border-control); background: var(--surface-input); color: var(--ink); text-align: center;">👨‍🏫 Учитель</button>
+              <button type="button" onclick="selectAuthViewRole('linguist_expert')" class="btn-auth-role" data-role="linguist_expert" style="padding: 9px 4px; border-radius: 12px; font-size: 11px; font-weight: 800; cursor: pointer; border: 1.5px solid var(--border-control); background: var(--surface-input); color: var(--ink); text-align: center;">🏛️ Эксперт УФИЦ</button>
+              <button type="button" onclick="selectAuthViewRole('school_org')" class="btn-auth-role" data-role="school_org" style="padding: 9px 4px; border-radius: 12px; font-size: 11px; font-weight: 800; cursor: pointer; border: 1.5px solid var(--border-control); background: var(--surface-input); color: var(--ink); text-align: center;">🏫 Школа / Класс</button>
+            </div>
+          </div>
+
+          
+          <form id="auth-reg-user-form" onsubmit="event.preventDefault(); submitAuthRegister();" style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+              <div style="display: flex; flex-direction: column; gap: 4px;">
+                <label for="auth-reg-login" style="font-size: 11px; font-weight: 800; color: var(--ink-muted); text-transform: uppercase;">Логин</label>
+                <input id="auth-reg-login" type="text" placeholder="Придумайте логин" required style="padding: 10px 12px; border-radius: 12px; background: var(--surface-input); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 13px; font-weight: 600;" />
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 4px;">
+                <label for="auth-reg-password" style="font-size: 11px; font-weight: 800; color: var(--ink-muted); text-transform: uppercase;">Пароль</label>
+                <input id="auth-reg-password" type="password" placeholder="Придумайте пароль" required style="padding: 10px 12px; border-radius: 12px; background: var(--surface-input); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 13px; font-weight: 600;" />
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+              <div style="display: flex; flex-direction: column; gap: 4px;">
+                <label for="auth-reg-fullname" style="font-size: 11px; font-weight: 800; color: var(--ink-muted); text-transform: uppercase;">ФИО / Имя</label>
+                <input id="auth-reg-fullname" type="text" placeholder="Введите имя и фамилию" required style="padding: 10px 12px; border-radius: 12px; background: var(--surface-input); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 13px; font-weight: 600;" />
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 4px;">
+                <label for="auth-reg-tg-user" style="font-size: 11px; font-weight: 800; color: var(--ink-muted); text-transform: uppercase;">Telegram @username</label>
+                <input id="auth-reg-tg-user" type="text" placeholder="@username (необязательно)" style="padding: 10px 12px; border-radius: 12px; background: var(--surface-input); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 13px; font-weight: 600;" />
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <label for="auth-reg-school-select" style="font-size: 11px; font-weight: 800; color: var(--ink-muted); text-transform: uppercase;">Школа / Образовательное учреждение</label>
+                <button type="button" onclick="selectAuthViewRole('school_org')" style="font-size: 11px; color: var(--primary); font-weight: 800; background: none; border: none; cursor: pointer;">+ Зарегистрировать школу</button>
+              </div>
+              <select id="auth-reg-school-select" onchange="onAuthSchoolChange()" style="padding: 10px 12px; border-radius: 12px; background: var(--surface-input); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 13px; font-weight: 600; cursor: pointer;">
+                <option value="1">ГБОУ Республиканская гимназия №1 им. Р. Гарипова (Уфа)</option>
+              </select>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+              <div style="display: flex; flex-direction: column; gap: 4px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <label for="auth-reg-class-select" style="font-size: 11px; font-weight: 800; color: var(--ink-muted); text-transform: uppercase;">Класс</label>
+                  <button type="button" onclick="selectAuthViewRole('school_org')" style="font-size: 10px; color: var(--primary); font-weight: 800; background: none; border: none; cursor: pointer;">+ Класс</button>
+                </div>
+                <div style="display: flex; gap: 6px;">
+                  <select id="auth-reg-class-select" style="flex: 1; padding: 10px 12px; border-radius: 12px; background: var(--surface-input); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 13px; font-weight: 600; cursor: pointer;">
+                    <option value="7А">7А</option>
+                    <option value="7Б">7Б</option>
+                    <option value="8В">8В</option>
+                    <option value="9А">9А</option>
+                  </select>
+                  <input id="auth-reg-class-custom" type="text" placeholder="или свой" style="width: 80px; padding: 10px 8px; border-radius: 12px; background: var(--surface-input); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 13px; font-weight: 600;" />
+                </div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 4px;">
+                <label for="auth-reg-lang-pair" style="font-size: 11px; font-weight: 800; color: var(--ink-muted); text-transform: uppercase;">Языковая пара</label>
+                <select id="auth-reg-lang-pair" style="padding: 10px 12px; border-radius: 12px; background: var(--surface-input); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 13px; font-weight: 600; cursor: pointer;">
+                  <option value="ba-ru">Башҡортса ⇄ Русский</option>
+                  <option value="ba-kk">Башҡортса ⇄ Қазақша</option>
+                  <option value="ba-en">Bashkir ⇄ English</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-3d btn-3d-primary" style="padding: 12px 18px; font-size: 14px; border-radius: 14px; margin-top: 4px; font-weight: 900; justify-content: center;">
+              💾 Зарегистрировать профиль
+            </button>
+          </form>
+
+          
+          <div id="auth-reg-org-container" class="hidden" style="display: flex; flex-direction: column; gap: 16px;">
+            <div id="auth-panel-orgs" style="display: flex; flex-direction: column; gap: 16px;">
+              
+              <div style="background: var(--surface-input); border: 1.5px solid var(--border-card); border-radius: 18px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="font-size: 16px;">🏫</span>
+                  <span style="font-weight: 900; font-size: 13px; color: var(--ink);">Регистрация новой школы / гимназии / лицея</span>
+                </div>
+
+                <form onsubmit="event.preventDefault(); submitAuthNewSchool();" style="display: flex; flex-direction: column; gap: 10px;">
+                  <div style="display: flex; flex-direction: column; gap: 4px;">
+                    <label for="auth-org-school-name" style="font-size: 11px; font-weight: 800; color: var(--ink-muted);">Полное наименование учреждения</label>
+                    <input id="auth-org-school-name" type="text" placeholder="например: ГБОУ Башкирский лицей №136" required style="padding: 10px 12px; border-radius: 12px; background: var(--surface-elevated); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 13px; font-weight: 600;" />
+                  </div>
+
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <div style="display: flex; flex-direction: column; gap: 4px;">
+                      <label for="auth-org-school-city" style="font-size: 11px; font-weight: 800; color: var(--ink-muted);">Город / Населённый пункт</label>
+                      <input id="auth-org-school-city" type="text" placeholder="Уфа / Стерлитамак / Сибай" required style="padding: 10px 12px; border-radius: 12px; background: var(--surface-elevated); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 13px; font-weight: 600;" />
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 4px;">
+                      <label for="auth-org-school-district" style="font-size: 11px; font-weight: 800; color: var(--ink-muted);">Район Башкортостана</label>
+                      <input id="auth-org-school-district" type="text" placeholder="Кировский район / Бурзянский" style="padding: 10px 12px; border-radius: 12px; background: var(--surface-elevated); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 13px; font-weight: 600;" />
+                    </div>
+                  </div>
+
+                  <button type="submit" class="btn-3d btn-3d-emerald" style="padding: 11px 16px; font-size: 13px; border-radius: 12px; align-self: flex-start; font-weight: 800;">
+                    + Зарегистрировать учреждение в РБ
+                  </button>
+                </form>
+              </div>
+
+              
+              <div style="background: var(--surface-input); border: 1.5px solid var(--border-card); border-radius: 18px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="font-size: 16px;">👥</span>
+                  <span style="font-weight: 900; font-size: 13px; color: var(--ink);">Добавление учебного класса в школу</span>
+                </div>
+
+                <form onsubmit="event.preventDefault(); submitAuthNewClass();" style="display: flex; flex-direction: column; gap: 10px;">
+                  <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 10px;">
+                    <div style="display: flex; flex-direction: column; gap: 4px;">
+                      <label for="auth-org-class-school-select" style="font-size: 11px; font-weight: 800; color: var(--ink-muted);">Выберите школу</label>
+                      <select id="auth-org-class-school-select" style="padding: 10px 12px; border-radius: 12px; background: var(--surface-elevated); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 13px; font-weight: 600; cursor: pointer;">
+                        <option value="1">ГБОУ Республиканская гимназия №1 (Уфа)</option>
+                      </select>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 4px;">
+                      <label for="auth-org-class-name" style="font-size: 11px; font-weight: 800; color: var(--ink-muted);">Класс</label>
+                      <input id="auth-org-class-name" type="text" placeholder="например: 8Б" required style="padding: 10px 12px; border-radius: 12px; background: var(--surface-elevated); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 13px; font-weight: 600;" />
+                    </div>
+                  </div>
+
+                  <button type="submit" class="btn-3d btn-3d-primary" style="padding: 11px 16px; font-size: 13px; border-radius: 12px; align-self: flex-start; font-weight: 800;">
+                    + Добавить класс в школу
+                  </button>
+                </form>
+              </div>
+
+              
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 12px; font-weight: 900; color: var(--ink); text-transform: uppercase;">Действующие школы и классы в системе</span>
+                  <button type="button" onclick="loadAllOrgsList()" style="font-size: 11px; font-weight: 800; color: var(--primary); background: none; border: none; cursor: pointer;">🔄 Обновить</button>
+                </div>
+                <div id="auth-orgs-live-list" style="display: flex; flex-direction: column; gap: 8px; max-height: 260px; overflow-y: auto;">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div id="auth-panel-tg" class="ios-glass-card hidden" style="border-radius: 26px; padding: 22px; display: flex; flex-direction: column; gap: 16px;">
+          <div>
+            <h4 style="font-weight: 900; font-size: 16px; color: var(--primary);">Связка с Telegram аккаунтом</h4>
+            <p style="font-size: 12px; color: var(--ink-soft); font-weight: 600; margin-top: 2px;">Привяжите ваш Telegram для бесшовного входа через бота Bashklingo и WebApp</p>
+          </div>
+
+          <div id="auth-tg-detected-banner" style="background: #D1FAE5; border: 1.5px solid #10B981; border-radius: 16px; padding: 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="width: 38px; height: 38px; border-radius: 12px; background: #059669; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 18px;">
+                ✈️
+              </div>
+              <div>
+                <span id="auth-tg-detected-title" style="font-weight: 900; font-size: 13px; color: #065F46; display: block;">Telegram Mini App активен</span>
+                <span id="auth-tg-detected-sub" style="font-size: 11px; color: #047857; font-weight: 600;">Пользователь обнаружен</span>
+              </div>
+            </div>
+            <button type="button" onclick="syncTelegramWebAppData()" class="btn-3d btn-3d-emerald" style="padding: 8px 14px; font-size: 12px; border-radius: 10px; flex-shrink: 0;">
+              ⚡ Привязать в 1 клик
+            </button>
+          </div>
+
+          <div style="background: var(--surface-input); border: 1.5px solid var(--border-card); border-radius: 18px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+            <span style="font-weight: 900; font-size: 13px; color: var(--ink);">Ручная привязка Telegram ID / Username</span>
+
+            <form onsubmit="event.preventDefault(); submitAuthLinkTg();" style="display: flex; flex-direction: column; gap: 10px;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                  <label for="auth-tg-input-id" style="font-size: 11px; font-weight: 800; color: var(--ink-muted);">Telegram ID (число)</label>
+                  <input id="auth-tg-input-id" type="number" placeholder="например: 12345678" style="padding: 10px 12px; border-radius: 12px; background: var(--surface-elevated); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 13px; font-weight: 600;" />
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                  <label for="auth-tg-input-username" style="font-size: 11px; font-weight: 800; color: var(--ink-muted);">Telegram Username</label>
+                  <input id="auth-tg-input-username" type="text" placeholder="@username" style="padding: 10px 12px; border-radius: 12px; background: var(--surface-elevated); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 13px; font-weight: 600;" />
+                </div>
+              </div>
+
+              <button type="submit" class="btn-3d btn-3d-primary" style="padding: 11px 16px; font-size: 13px; border-radius: 12px; align-self: flex-start; font-weight: 800;">
+                🔗 Привязать Telegram к активному аккаунту
+              </button>
+            </form>
+          </div>
+        </div>
+
+        
+        <div id="auth-panel-demo" style="display: none !important;" aria-hidden="true"></div>
+
+      </div>
+    </main>
+
+    
     <nav class="mobile-dock" aria-label="Мобильная навигация">
       <div class="mobile-dock-grid">
         <button type="button" onclick="navTo('trail')" id="tab-nav-trail" class="mobile-tab active">
@@ -2096,7 +2484,7 @@
         </button>
 
         <button type="button" onclick="navTo('leaderboard')" id="tab-nav-leaderboard" class="mobile-tab">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94A5.01 5.01 0 0 0 11 15.9V19H7v2h10v-2h-4v-3.1c1.8-.46 3.16-1.9 3.61-3.96C19.08 11.63 21 9.55 21 7V5c0-1.1-.9-2-2-2z"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94A5.01 5.01 0 0 0 11 15.9V19H7v2h10v-2h-4v-3.1c1.8-.46 3.16-1.9 3.61-3.96 2.47-.31 4.39-2.39 4.39-4.94V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>
           <span id="tab-nav-leaderboard-text">Рейтинг</span>
         </button>
 
@@ -2104,10 +2492,15 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
           <span id="tab-nav-profile-text">Профиль</span>
         </button>
+
+        <button type="button" onclick="navTo('auth')" id="tab-nav-auth" class="mobile-tab" style="display: none !important;" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+          <span id="tab-nav-auth-text">Вход</span>
+        </button>
       </div>
     </nav>
 
-    <!-- OVERLAY: INTERACTIVE LESSON (6 Exercise Types) -->
+    
     <section id="lesson-overlay" class="lesson-overlay hidden" aria-modal="true" role="dialog">
       <div style="padding: calc(12px + env(safe-area-inset-top, 0px)) 16px 10px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid var(--border-subtle); background: var(--lesson-bar-bg);">
         <button type="button" onclick="closeLesson()" style="width: 34px; height: 34px; border-radius: 9999px; background: var(--surface-elevated); border: 1px solid var(--border-control); display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; color: var(--ink);" aria-label="Закрыть урок">
@@ -2138,7 +2531,7 @@
       </div>
     </section>
 
-    <!-- MODAL: BASHKIR ALPHABET & FULL VIRTUAL KEYBOARD -->
+    
     <div id="kb-modal" onclick="if(event.target === this) closeKbModal()" class="ios-modal-backdrop hidden" role="dialog" aria-modal="true">
       <div class="ios-modal-sheet" style="max-width: 600px;">
         <div class="sheet-handle"></div>
@@ -2153,10 +2546,10 @@
         </div>
 
         <div class="custom-scroll" style="padding: 16px 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 14px;">
-          <!-- 9 Special Phonetic Cards -->
+          
           <div id="alphabet-9-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;"></div>
 
-          <!-- Practice Input -->
+          
           <div class="ios-glass-card" style="border-radius: 20px; padding: 12px; display: flex; flex-direction: column; gap: 10px;">
             <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px;">
               <span id="kb-practice-prompt" style="font-size: 12px; font-weight: 800; color: var(--primary);"></span>
@@ -2174,19 +2567,19 @@
       </div>
     </div>
 
-    <!-- MODAL: AI TUTOR ("Тел-Остаһы" · DeepSeek V4.1 Flash) -->
+    
     <div id="tutor-modal" onclick="if(event.target === this) closeTutorModal()" class="ios-modal-backdrop hidden" role="dialog" aria-modal="true">
       <div class="ios-modal-sheet" style="max-width: 560px; height: 82dvh;">
         <div class="sheet-handle"></div>
         <div style="padding: 14px 18px; border-bottom: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between;">
           <div style="display: flex; align-items: center; gap: 10px;">
             <div style="width: 36px; height: 36px; border-radius: 12px; background: linear-gradient(135deg, #025E73, #14532D); color: #FDE68A; display: flex; align-items: center; justify-content: center;">
-              <!-- Stylized Heraldic Marten / Wisdom Spark -->
+              
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L9.5 8.5 3 11l6.5 2.5L12 20l2.5-6.5L21 11l-6.5-2.5z"/></svg>
             </div>
             <div>
               <h4 id="tutor-title" style="font-weight: 900; font-size: 14px; color: var(--primary);">Тел-Остаһы · ИИ-остаз</h4>
-              <span id="tutor-sub" style="font-size: 10px; font-weight: 700; color: var(--secondary);">DeepSeek V4.1 Flash · Сингармонизм</span>
+              <span id="tutor-sub" style="font-size: 10px; font-weight: 700; color: var(--secondary);">AI-наставник · Сингармонизм</span>
             </div>
           </div>
           <button type="button" onclick="closeTutorModal()" style="width: 32px; height: 32px; border-radius: 9999px; background: var(--surface-close-btn); color: var(--ink); display: flex; align-items: center; justify-content: center; cursor: pointer;" aria-label="Закрыть">
@@ -2208,7 +2601,7 @@
       </div>
     </div>
 
-    <!-- MODAL: TREASURE CHEST -->
+    
     <div id="chest-modal" onclick="if(event.target === this) closeChestModal()" class="ios-modal-backdrop hidden" role="dialog" aria-modal="true">
       <div class="ios-modal-sheet" style="max-width: 440px;">
         <div class="sheet-handle"></div>
@@ -2223,7 +2616,7 @@
       </div>
     </div>
 
-    <!-- MODAL: BADGE SELECTOR -->
+    
     <div id="badge-modal" onclick="if(event.target === this) closeBadgeModal()" class="ios-modal-backdrop hidden" role="dialog" aria-modal="true">
       <div class="ios-modal-sheet" style="max-width: 460px;">
         <div class="sheet-handle"></div>
@@ -2243,85 +2636,18 @@
       </div>
     </div>
 
-    <!-- MODAL 1: USER REGISTRATION (ТЗ №3: Школа, Класс, Роль, Языковая пара) -->
-    <div id="reg-modal" onclick="if(event.target === this) closeRegModal()" class="ios-modal-backdrop hidden" role="dialog" aria-modal="true">
-      <div class="ios-modal-sheet" style="max-width: 520px;">
-        <div class="sheet-handle"></div>
-        <div style="padding: 18px 22px; display: flex; flex-direction: column; gap: 14px;">
-          <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 12px;">
-            <div style="display: flex; align-items: center; gap: 10px;">
-              <div style="width: 36px; height: 36px; border-radius: 12px; background: linear-gradient(135deg, #059669, #025E73); color: #fff; display: flex; align-items: center; justify-content: center;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-              </div>
-              <div>
-                <h4 style="font-weight: 900; font-size: 16px; color: var(--ink);">Регистрация участника</h4>
-                <span style="font-size: 11px; color: var(--ink-soft); font-weight: 600;">Башҡорт мәктәбе · ТЗ №3</span>
-              </div>
-            </div>
-            <button type="button" onclick="closeRegModal()" style="width: 32px; height: 32px; border-radius: 9999px; background: var(--surface-close-btn); color: var(--ink); display: flex; align-items: center; justify-content: center; cursor: pointer;" aria-label="Закрыть">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-            </button>
-          </div>
-
-          <!-- Role Selector -->
-          <div style="display: flex; flex-direction: column; gap: 6px;">
-            <label style="font-size: 11px; font-weight: 800; color: var(--ink-muted); text-transform: uppercase;">Роль в проекте</label>
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;" id="reg-role-tabs">
-              <button type="button" onclick="selectRegRole('student')" class="btn-role-tab active" data-role="student" style="padding: 8px 6px; border-radius: 12px; font-size: 12px; font-weight: 800; cursor: pointer; border: 1.5px solid var(--primary); background: var(--primary-light); color: var(--primary); text-align: center;">🎓 Ученик</button>
-              <button type="button" onclick="selectRegRole('teacher')" class="btn-role-tab" data-role="teacher" style="padding: 8px 6px; border-radius: 12px; font-size: 12px; font-weight: 800; cursor: pointer; border: 1.5px solid var(--border-control); background: var(--surface-input); color: var(--ink); text-align: center;">👨‍🏫 Учитель</button>
-              <button type="button" onclick="selectRegRole('linguist_expert')" class="btn-role-tab" data-role="linguist_expert" style="padding: 8px 6px; border-radius: 12px; font-size: 12px; font-weight: 800; cursor: pointer; border: 1.5px solid var(--border-control); background: var(--surface-input); color: var(--ink); text-align: center;">🏛️ Эксперт</button>
-            </div>
-          </div>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-            <div style="display: flex; flex-direction: column; gap: 4px;">
-              <label style="font-size: 11px; font-weight: 800; color: var(--ink-muted);">Имя / Псевдоним</label>
-              <input id="reg-name" type="text" placeholder="Айгиз Хасанов" style="padding: 9px 12px; border-radius: 12px; background: var(--surface-input); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 13px; font-weight: 600;" />
-            </div>
-            <div style="display: flex; flex-direction: column; gap: 4px;">
-              <label style="font-size: 11px; font-weight: 800; color: var(--ink-muted);">Telegram @username</label>
-              <input id="reg-username" type="text" placeholder="@aigiz_rb" style="padding: 9px 12px; border-radius: 12px; background: var(--surface-input); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 13px; font-weight: 600;" />
-            </div>
-          </div>
-
-          <!-- School select -->
-          <div style="display: flex; flex-direction: column; gap: 4px;">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <label style="font-size: 11px; font-weight: 800; color: var(--ink-muted);">Школа / Лицей Республики Башкортостан</label>
-              <button type="button" onclick="closeRegModal(); openSchoolRegModal();" style="font-size: 11px; color: var(--primary); font-weight: 800; background: none; border: none; cursor: pointer;">+ Новая школа</button>
-            </div>
-            <select id="reg-school-select" style="padding: 10px 12px; border-radius: 12px; background: var(--surface-input); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 13px; font-weight: 600; cursor: pointer;">
-              <option value="1">ГБОУ Республиканская гимназия №1 им. Р. Гарипова (Уфа)</option>
-              <option value="2">МАОУ Башкирский лицей №136 им. М. Искужина (Уфа)</option>
-              <option value="3">ГБОУ Башкирский лицей-интернат №3 (Стерлитамак)</option>
-              <option value="4">МАОУ Гимназия №2 им. З. Валиди (Ишимбай)</option>
-              <option value="5">ГБОУ Сибайская гимназия-интернат (Сибай)</option>
-            </select>
-          </div>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-            <div style="display: flex; flex-direction: column; gap: 4px;">
-              <label style="font-size: 11px; font-weight: 800; color: var(--ink-muted);">Класс</label>
-              <input id="reg-class" type="text" value="7А" placeholder="7А" style="padding: 9px 12px; border-radius: 12px; background: var(--surface-input); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 13px; font-weight: 600;" />
-            </div>
-            <div style="display: flex; flex-direction: column; gap: 4px;">
-              <label style="font-size: 11px; font-weight: 800; color: var(--ink-muted);">Языковая пара</label>
-              <select id="reg-lang-pair" style="padding: 9px 12px; border-radius: 12px; background: var(--surface-input); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 13px; font-weight: 600; cursor: pointer;">
-                <option value="ba-ru">Башҡортса ⇄ Русский</option>
-                <option value="ba-kk">Башҡортса ⇄ Қазақша</option>
-                <option value="ba-en">Bashkir ⇄ English</option>
-              </select>
-            </div>
-          </div>
-
-          <button type="button" onclick="submitUserRegistration()" class="btn-3d btn-3d-primary" style="width: 100%; padding: 12px 18px; font-size: 14px; margin-top: 4px;">
-            💾 Зарегистрироваться в системе
-          </button>
-        </div>
-      </div>
+    
+    <div id="reg-modal" style="display: none !important;" aria-hidden="true">
+      <div id="auth-view-switch"></div>
+      <div id="auth-view-reg"></div>
+      <input id="reg-name" type="hidden" />
+      <input id="reg-username" type="hidden" />
+      <select id="reg-school-select" style="display: none;"></select>
+      <input id="reg-class" type="hidden" />
+      <select id="reg-lang-pair" style="display: none;"></select>
     </div>
 
-    <!-- MODAL 2: SCHOOL REGISTRATION -->
+    
     <div id="school-reg-modal" onclick="if(event.target === this) closeSchoolRegModal()" class="ios-modal-backdrop hidden" role="dialog" aria-modal="true">
       <div class="ios-modal-sheet" style="max-width: 480px;">
         <div class="sheet-handle"></div>
@@ -2364,7 +2690,7 @@
       </div>
     </div>
 
-    <!-- MODAL 3: DAILY CORPUS VERIFICATION (ТЗ №3) -->
+    
     <div id="daily-corpus-modal" onclick="if(event.target === this) closeDailyCorpusModal()" class="ios-modal-backdrop hidden" role="dialog" aria-modal="true">
       <div class="ios-modal-sheet" style="max-width: 580px;">
         <div class="sheet-handle"></div>
@@ -2375,7 +2701,7 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
               </div>
               <div>
-                <h4 style="font-weight: 900; font-size: 16px; color: var(--ink);">Верификация корпуса</h4>
+                <h4 id="daily-corpus-modal-title" style="font-weight: 900; font-size: 16px; color: var(--ink);">Верификация корпуса</h4>
                 <span style="font-size: 11px; color: #B45309; font-weight: 700;">ТЗ №3 · Краудсорсинг переводов</span>
               </div>
             </div>
@@ -2389,7 +2715,7 @@
             <span id="daily-source-meta" style="font-size: 11px; color: var(--ink-soft); font-weight: 600;">Источник...</span>
           </div>
 
-          <!-- Original Text card with TTS -->
+          
           <div style="background: var(--surface-input); border: 1.5px solid var(--border-card); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 8px;">
             <div style="display: flex; justify-content: space-between; align-items: center;">
               <span style="font-size: 10px; font-weight: 800; color: var(--primary); text-transform: uppercase;">Башҡортса (Оригинал)</span>
@@ -2401,22 +2727,22 @@
             <div id="daily-text-ba" style="font-size: 15px; font-weight: 800; color: var(--ink); line-height: 1.4;">Загрузка фрагмента...</div>
           </div>
 
-          <!-- Translation Card -->
+          
           <div style="background: var(--surface-input); border: 1.5px solid var(--border-card); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 8px;">
             <span style="font-size: 10px; font-weight: 800; color: var(--secondary); text-transform: uppercase;">Текущий перевод (Русский)</span>
             <div id="daily-text-tr" style="font-size: 14px; font-weight: 700; color: var(--ink); line-height: 1.4;">Загрузка перевода...</div>
           </div>
 
-          <!-- Confirm button -->
-          <button type="button" onclick="voteCorpus('confirm')" class="btn-3d btn-3d-emerald" style="width: 100%; padding: 12px 18px; font-size: 13px;">
+          
+          <button id="daily-btn-confirm" type="button" onclick="voteCorpus('confirm')" class="btn-3d btn-3d-emerald" style="width: 100%; padding: 12px 18px; font-size: 13px;">
             ✅ Перевод верен (+15 XP, +10 Тамъя)
           </button>
 
-          <!-- Edit proposal -->
+          
           <div style="display: flex; flex-direction: column; gap: 6px; border-top: 1px solid var(--border-subtle); padding-top: 10px;">
             <label style="font-size: 11px; font-weight: 800; color: var(--ink-muted);">Есть неточность? Предложите академический вариант:</label>
             <input id="daily-suggest-text" type="text" placeholder="Введите исправленный перевод..." style="padding: 10px 14px; border-radius: 12px; background: var(--surface-input); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 13px; font-weight: 600;" />
-            <button type="button" onclick="voteCorpus('suggest_edit')" class="btn-3d btn-3d-honey" style="width: 100%; padding: 11px 18px; font-size: 13px;">
+            <button id="daily-btn-suggest" type="button" onclick="voteCorpus('suggest_edit')" class="btn-3d btn-3d-honey" style="width: 100%; padding: 11px 18px; font-size: 13px;">
               ✏️ Отправить исправление на консенсус (+35 XP, +20 Тамъя)
             </button>
           </div>
@@ -2429,7 +2755,7 @@
       </div>
     </div>
 
-    <!-- MODAL 4: LMS TEACHER DASHBOARD (ТЗ №3: Отчет по классу) -->
+    
     <div id="lms-modal" onclick="if(event.target === this) closeLmsModal()" class="ios-modal-backdrop hidden" role="dialog" aria-modal="true">
       <div class="ios-modal-sheet" style="max-width: 640px; max-height: 85dvh; display: flex; flex-direction: column;">
         <div class="sheet-handle"></div>
@@ -2440,7 +2766,7 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
               </div>
               <div>
-                <h4 style="font-weight: 900; font-size: 16px; color: var(--ink);">LMS-кабинет учителя</h4>
+                <h4 id="lms-modal-title" style="font-weight: 900; font-size: 16px; color: var(--ink);">LMS-кабинет учителя</h4>
                 <span style="font-size: 11px; color: var(--ink-soft); font-weight: 600;">Уҡытыусы кабинеты · Аналитика класса</span>
               </div>
             </div>
@@ -2449,7 +2775,7 @@
             </button>
           </div>
 
-          <!-- Class selector filter -->
+          
           <div style="display: flex; gap: 8px; align-items: center;">
             <input id="lms-class-input" type="text" value="7А" placeholder="Класс (напр. 7А)" style="flex: 1; padding: 10px 14px; border-radius: 12px; background: var(--surface-input); color: var(--ink); border: 1.5px solid var(--border-control); font-size: 13px; font-weight: 700;" />
             <button type="button" onclick="loadLmsReport()" class="btn-3d btn-3d-primary" style="padding: 10px 16px; font-size: 13px;">
@@ -2457,7 +2783,7 @@
             </button>
           </div>
 
-          <!-- 4 KPI cards -->
+          
           <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;">
             <div style="background: var(--surface-card); border: 1px solid var(--border-card); border-radius: 12px; padding: 10px; text-align: center;">
               <span style="font-size: 10px; color: var(--ink-soft); font-weight: 700;">Точность</span>
@@ -2477,18 +2803,18 @@
             </div>
           </div>
 
-          <!-- Students table -->
+          
           <div style="display: flex; flex-direction: column; gap: 6px;">
             <span style="font-size: 11px; font-weight: 800; color: var(--ink-muted); text-transform: uppercase;">Список учеников класса</span>
             <div id="lms-students-table" style="display: flex; flex-direction: column; gap: 6px; max-height: 240px; overflow-y: auto;">
-              <!-- Dynamically populated -->
+              
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- MODAL 5: EXPERT REVIEW PANEL (ИИЯЛ УФИЦ РАН) -->
+    
     <div id="expert-modal" onclick="if(event.target === this) closeExpertModal()" class="ios-modal-backdrop hidden" role="dialog" aria-modal="true">
       <div class="ios-modal-sheet" style="max-width: 640px; max-height: 85dvh; display: flex; flex-direction: column;">
         <div class="sheet-handle"></div>
@@ -2499,7 +2825,7 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
               </div>
               <div>
-                <h4 style="font-weight: 900; font-size: 16px; color: var(--ink);">Экспертный совет УФИЦ РАН</h4>
+                <h4 id="expert-modal-title" style="font-weight: 900; font-size: 16px; color: var(--ink);">Экспертный совет УФИЦ РАН</h4>
                 <span style="font-size: 11px; color: var(--ink-soft); font-weight: 600;">ИИЯЛ УФИЦ РАН · Разрешение споров</span>
               </div>
             </div>
@@ -2514,13 +2840,13 @@
           </div>
 
           <div id="expert-disputes-list" style="display: flex; flex-direction: column; gap: 10px; max-height: 380px; overflow-y: auto;">
-            <!-- Disputed items rendered here -->
+            
           </div>
         </div>
       </div>
     </div>
 
-    <!-- MODAL 6: CORPUS SLICER (ТЗ №3 п. 4.2) -->
+    
     <div id="slice-modal" onclick="if(event.target === this) closeSliceModal()" class="ios-modal-backdrop hidden" role="dialog" aria-modal="true">
       <div class="ios-modal-sheet" style="max-width: 580px;">
         <div class="sheet-handle"></div>
@@ -2531,7 +2857,7 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9.64 7.64c.23-.5.36-1.05.36-1.64 0-2.21-1.79-4-4-4S2 3.79 2 6s1.79 4 4 4c.59 0 1.14-.13 1.64-.36L10 12l-2.36 2.36C7.14 14.13 6.59 14 6 14c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4c0-.59-.13-1.14-.36-1.64L12 14l7 7h3v-1L9.64 7.64zM6 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm0 12c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm6-7.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5.5.22.5.5-.22.5-.5.5zM19 3l-6 6 2 2 7-7V3h-3z"/></svg>
               </div>
               <div>
-                <h4 style="font-weight: 900; font-size: 16px; color: var(--ink);">Нарезчик корпуса текстов</h4>
+                <h4 id="slice-modal-title" style="font-weight: 900; font-size: 16px; color: var(--ink);">Нарезчик корпуса текстов</h4>
                 <span style="font-size: 11px; color: var(--ink-soft); font-weight: 600;">ТЗ №3 п. 4.2 · Сегментация на фрагменты</span>
               </div>
             </div>
@@ -2570,13 +2896,13 @@
       </div>
     </div>
 
-    <!-- Global Toast -->
+    
     <div id="toast-banner" class="toast-banner hidden" role="status"></div>
 
   </div>
 
   <script>
-    const STORAGE_KEY = 'basklingo_stats_v1';
+    const STORAGE_KEY = 'basklingo_stats_v2';
 
     function getLocalDateKey() {
       const d = new Date();
@@ -2588,10 +2914,21 @@
 
     const DEFAULT_STATS = {
       theme: 'light',
+      userRole: 'guest',
+      userName: 'Гость платформы',
+      userLogin: 'guest',
+      userClass: '',
+      userSchoolId: 1,
+      userLangPair: 'ba-ru',
+      telegramLinked: false,
+      telegramUsername: '',
+      telegramId: null,
+      userId: 0,
+      isGuest: true,
       langIndex: 0,
       currentView: 'trail',
       activeBiomeIndex: 0,
-      leaderboardCat: 'class',
+      leaderboardCat: 'republic',
       republicRegion: 'all',
       selectedBadge: 'kuray',
       streak: 7,
@@ -2640,6 +2977,17 @@
         const payload = {
           version: 1,
           theme: state.theme,
+          userRole: state.userRole,
+          userName: state.userName,
+          userLogin: state.userLogin,
+          userClass: state.userClass,
+          userSchoolId: state.userSchoolId,
+          userLangPair: state.userLangPair,
+          telegramLinked: state.telegramLinked,
+          telegramUsername: state.telegramUsername,
+          telegramId: state.telegramId,
+          userId: state.userId,
+          isGuest: state.isGuest,
           langIndex: state.langIndex,
           currentView: state.currentView,
           activeBiomeIndex: state.activeBiomeIndex,
@@ -2685,8 +3033,45 @@
         if (saved.theme === 'dark' || saved.theme === 'light') {
           state.theme = saved.theme;
         }
+        if (['admin', 'student', 'teacher', 'linguist_expert', 'guest'].includes(saved.userRole)) {
+          state.userRole = saved.userRole;
+        } else {
+          state.userRole = 'guest';
+        }
+        if (saved.userName && typeof saved.userName === 'string') {
+          state.userName = saved.userName;
+        }
+        if (saved.userClass && typeof saved.userClass === 'string') {
+          state.userClass = saved.userClass;
+        }
+        if (Number.isFinite(saved.userSchoolId)) {
+          state.userSchoolId = saved.userSchoolId;
+        }
+        if (saved.userLangPair && typeof saved.userLangPair === 'string') {
+          state.userLangPair = saved.userLangPair;
+        }
+        if (saved.userLogin && typeof saved.userLogin === 'string') {
+          state.userLogin = saved.userLogin;
+        }
+        if (saved.telegramUsername && typeof saved.telegramUsername === 'string') {
+          state.telegramUsername = saved.telegramUsername;
+        }
+        if (saved.telegramId !== undefined) {
+          state.telegramId = saved.telegramId;
+        }
+        if (saved.userId !== undefined) {
+          state.userId = saved.userId;
+        }
+        if (saved.telegramLinked !== undefined) {
+          state.telegramLinked = Boolean(saved.telegramLinked);
+        }
+        if (saved.isGuest !== undefined) {
+          state.isGuest = Boolean(saved.isGuest);
+        } else {
+          state.isGuest = (state.userRole === 'guest');
+        }
         state.langIndex = clampInt(saved.langIndex, 0, 3, DEFAULT_STATS.langIndex);
-        if (['trail', 'leaderboard', 'profile'].includes(saved.currentView)) {
+        if (['trail', 'leaderboard', 'profile', 'auth'].includes(saved.currentView)) {
           state.currentView = saved.currentView;
         }
         state.activeBiomeIndex = clampInt(saved.activeBiomeIndex, 0, 3, DEFAULT_STATS.activeBiomeIndex);
@@ -2753,6 +3138,7 @@
       });
       try {
         window.localStorage.removeItem(STORAGE_KEY);
+        window.localStorage.removeItem('basklingo_has_entered');
       } catch (e) {}
       saveState();
       renderAll();
@@ -2802,13 +3188,47 @@
     function initTma() {
       try {
         const wa = window.Telegram && window.Telegram.WebApp;
-        if (!wa) return;
-        wa.ready && wa.ready();
-        wa.expand && wa.expand();
-        if (!window.localStorage.getItem(STORAGE_KEY) && wa.colorScheme === 'dark') {
-          applyTheme('dark');
+        if (wa) {
+          wa.ready && wa.ready();
+          wa.expand && wa.expand();
+          if (!window.localStorage.getItem(STORAGE_KEY) && wa.colorScheme === 'dark') {
+            applyTheme('dark');
+          }
         }
       } catch (e) {}
+
+      
+      const user = window.Telegram?.WebApp?.initDataUnsafe?.user;
+      const tid = user?.id || 100001;
+      const uname = user?.username || 'aanagke';
+      const fname = user?.first_name || 'Андрей (Главный администратор)';
+
+      fetch('/api/user/profile', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ telegram_id: tid, username: uname, first_name: fname })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.user) {
+          if (!state.isGuest) {
+            state.userRole = data.user.role || state.userRole || 'admin';
+            state.userName = data.user.first_name || state.userName;
+          }
+          state.streak = data.user.streak_days || state.streak;
+          state.tamya = data.user.honey_drops || state.tamya;
+          state.totalXp = ((data.user.explorer_xp || 0) + (data.user.guide_xp || 0)) || state.totalXp;
+          state.wordsCount = data.user.words_learned || state.wordsCount;
+          state.accuracy = data.user.accuracy_percent || state.accuracy;
+          saveState();
+          renderHeaderMetrics();
+          renderRoleAccess();
+          renderProfile();
+        }
+      })
+      .catch(() => {
+        renderRoleAccess();
+      });
     }
 
     function triggerHaptic(kind = 'light') {
@@ -2844,10 +3264,35 @@
       {
         id: 'ba', code: 'БАШ', brandSub: 'Тел-суҡмаҡ', langSelectTitle: 'Телде һайлағыҙ',
         themeToDark: 'Ҡараңғы тема', themeToLight: 'Яҡты тема',
-        tabs: { trail: 'Уҡыу', lb: 'Рейтинг', profile: 'Профиль' },
+        tabs: { trail: 'Уҡыу', lb: 'Рейтинг', profile: 'Профиль', auth: 'Инеү' },
         titles: { streak: 'Серия көндәре', tamya: '«Тамъя» балдары', hearts: 'Йөрәктәр' },
         goalTitle: 'Көнлөк маҡсат', goalDesc: 'Тағы 1 дәрес үтегеҙ — һандыҡ асылыр!',
-        tools: { lesson: 'Дәрес', kb: 'Хәрефтәр', tutor: 'Тел-Остаһы' },
+        tools: {
+          lesson: 'Дәрес',
+          kb: 'Хәрефтәр',
+          tutor: 'Тел-Остаһы',
+          corpus: '📜 Корпус ТЗ №3',
+          roles: '👥 Инеү / Ролдәр',
+          lms: '👨‍🏫 LMS Класс',
+          school: '🏫 + Мәктәп',
+          expert: '⚖️ ӨФҒҮ РФА',
+          slice: '✂️ Киҫеү'
+        },
+        roleLabels: { admin: 'Админ', student: 'Уҡыусы', teacher: 'Уҡытыусы', linguist_expert: 'ӨФҒҮ РФА', guest: 'Ҡунаҡ' },
+        roleNames: {
+          admin: '👑 Баш администратор',
+          student: '🎓 Уҡыусы (7-се класс)',
+          teacher: '👨‍🏫 Башҡорт теле уҡытыусыһы',
+          linguist_expert: '🏛️ ӨФҒҮ РФА эксперты',
+          guest: '👤 Ҡунаҡ режимы'
+        },
+        guestBannerText: 'Ҡунаҡ режимы: танышыу инеүе (мәғлүмәттәр һаҡланмай)',
+        guestBannerBtn: 'Теркәлеү',
+        guestSchoolClass: 'Танышыу режимы',
+        guestCardTitle: 'Ҡунаҡ режимы (мәғлүмәттәр һаҡланмай)',
+        guestCardDesc: 'Һеҙ танышыу режимындаһығыҙ. Дәрестәр үтеү сикләүһеҙ асыҡ, ләкин мәғлүмәттәрҙе һаҡлау һәм рейтинг өсөн аккаунтҡа инегеҙ.',
+        guestLoginLabel: 'ҡунаҡ инеүе',
+        guestOrgLabel: 'Танышыу режимы (мәктәпһеҙ)',
         classWidgetTitle: 'Лидерҙар · 7 «Б»', classWidgetSchool: '1-се гимназия', classWidgetBtn: 'Тулы таблица',
         shopTitle: 'Бөрйән умарталығы', shopDesc: '«Тамъя» балдарын серия туңдырыуға һәм йөрәктәргә алмаштырығыҙ!',
         userLabel: 'Андрей · Һеҙ', userName: 'Андрей', scoreUnit: 'Тамъя',
@@ -2863,6 +3308,7 @@
         metrics: { streak: 'Серия', streakUnit: 'көн', tamya: 'Тамъя', words: 'Һүҙлек', acc: 'Дөрөҫлөк' },
         achTitle: 'Ҡаҙаныш кәрәҙҙәре',
         shopSub: 'Балансты хәүефһеҙ ҡулланығыҙ', shopFreezes: 'Туңдырыу: {n}', shopBuy: 'Алырға',
+        shopLoginToBuy: '🔒 Һатып алыу өсөн инегеҙ',
         shopNotEnough: 'Тамъя етмәй (кәрәк: {cost})',
         shopBought: { freeze: 'Серияны туңдырыу өҫтәлде!', hearts: '5 йөрәк тултырылды!', marten: '«Алтын һуҫар» билдәһе асылды!' },
         avatarTitle: 'Айырма билдәһен һайлау',
@@ -2872,13 +3318,21 @@
         kbTitle: 'Башҡорт әлифбаһы һәм клавиатура', kbSub: '9 үҙенсәлекле хәреф + тулы раскладка',
         kbPrompt: 'Башҡортса «Ҡурай» һүҙен яҙығыҙ: Ҡурай', kbFullToggle: 'Тулы клавиатура',
         chipPlaceholder: 'Түбәндәге һүҙҙәрҙе баҫып йыйығыҙ...',
-        tutorTitle: 'Тел-Остаһы · ИИ-остаз', tutorSub: 'DeepSeek V4.1 Flash · Сингармонизм',
+        tutorTitle: 'Тел-Остаһы · ИИ-остаз', tutorSub: 'ИИ-остаз · Сингармонизм',
         tutorPlaceholder: 'Сингармонизм йәки һүҙ тураһында һорағыҙ...',
         lessonCheck: 'Тикшерергә', lessonNext: 'Артабан', lessonOk: 'Афарин! Дөрөҫ яуап!', lessonErr: 'Хата. Дөрөҫ яуап:',
         lessonComplete: 'Дәрес үтелде!', lessonReward: '+25 Тамъя · +20 XP өҫтәлде', lessonBack: 'Тропаға ҡайтыу',
         lockedNodeMsg: 'Башта алдағы кәрәҙҙе үтегеҙ!', chestClaimedMsg: 'Алынды!', chestClaimBtn: '+15 Тамъя алырға',
         noHeartsMsg: 'Йөрәктәр бөттө! Умарталыҡта тулыландырығыҙ.',
         resetStatsBtn: 'Прогрессты яңыртыу', resetStatsDone: 'Һаҡланған статистика яңыртылды',
+        logoutShort: 'Сығыу',
+        logoutLong: '🚪 Аккаунттан сығыу',
+        authBtn: '🔑 Аккаунтҡа инеү',
+        authTabs: { login: '🔑 Инеү', reg: '📝 Теркәлеү', tg: '✈️ Telegram', toTrail: 'Эко-суҡмаҡҡа →' },
+        corpusTitle: 'Башҡорт теле корпусы · ТЗ №3',
+        lmsTitle: 'Кластар менән идара итеү · Уҡытыусы',
+        expertTitle: 'Эксперт панели · ӨФҒҮ РФА',
+        sliceTitle: 'Корпусты һәм һөйләмдәрҙе киҫеү',
         biomes: [
           { badge: '1-се бүлек · Көньяҡ аймаҡ', title: 'Шүлгән-Таш мәмерйәһе', short: 'Шүлгән-Таш', dialect: 'Көньяҡ диалект', desc: 'Боронғо һүрәттәр төбәге: сәләмләү, ғаилә һәм һандар.' },
           { badge: '2-се бүлек · Әҙәби тел', title: 'Ағиҙел һәм Торатау', short: 'Торатау', dialect: 'Әҙәби норма', desc: 'Ағиҙел буйлап сәйәхәт, тәбиғәт һәм сифаттар.' },
@@ -2890,10 +3344,35 @@
       {
         id: 'ru', code: 'РУС', brandSub: 'Тропа языков', langSelectTitle: 'Выберите язык',
         themeToDark: 'Тёмная тема', themeToLight: 'Светлая тема',
-        tabs: { trail: 'Учёба', lb: 'Рейтинг', profile: 'Профиль' },
+        tabs: { trail: 'Учёба', lb: 'Рейтинг', profile: 'Профиль', auth: 'Вход' },
         titles: { streak: 'Дней серии', tamya: 'Баллы «Тамъя»', hearts: 'Жизни' },
         goalTitle: 'Цель дня', goalDesc: 'Пройдите ещё 1 урок до сундука с Тамъя!',
-        tools: { lesson: 'Урок', kb: 'Клавиатура', tutor: 'Тел-Остаһы' },
+        tools: {
+          lesson: 'Урок',
+          kb: 'Клавиатура',
+          tutor: 'ИИ-наставник',
+          corpus: '📜 Корпус ТЗ №3',
+          roles: '👥 Вход / Роли',
+          lms: '👨‍🏫 LMS Класс',
+          school: '🏫 + Школа',
+          expert: '⚖️ УФИЦ РАН',
+          slice: '✂️ Нарезка'
+        },
+        roleLabels: { admin: 'Админ', student: 'Ученик', teacher: 'Учитель', linguist_expert: 'УФИЦ РАН', guest: 'Гость' },
+        roleNames: {
+          admin: '👑 Главный администратор',
+          student: '🎓 Ученик (7А класс)',
+          teacher: '👨‍🏫 Учитель башкирского языка',
+          linguist_expert: '🏛️ Эксперт УФИЦ РАН',
+          guest: '👤 Гость платформы'
+        },
+        guestBannerText: 'Режим гостя: ознакомительный доступ (данные не сохраняются)',
+        guestBannerBtn: 'Регистрация',
+        guestSchoolClass: 'Ознакомительный режим',
+        guestCardTitle: 'Гостевой режим (данные не сохраняются)',
+        guestCardDesc: 'Вы находитесь в ознакомительном режиме. Прохождение уроков доступно без ограничений, однако для сохранения статистики и участия в рейтинге войдите в аккаунт.',
+        guestLoginLabel: 'гостевой доступ',
+        guestOrgLabel: 'Ознакомительный режим без привязки к школе',
         classWidgetTitle: 'Лидеры · 7 «Б»', classWidgetSchool: 'Гимназия №1', classWidgetBtn: 'Полная таблица',
         shopTitle: 'Бурзянская пасека', shopDesc: 'Обменивайте баллы «Тамъя» на заморозку серии и жизни!',
         userLabel: 'Андрей · Вы', userName: 'Андрей', scoreUnit: 'Тамъя',
@@ -2909,6 +3388,7 @@
         metrics: { streak: 'Серия', streakUnit: 'дн.', tamya: 'Тамъя', words: 'Словарь', acc: 'Точность' },
         achTitle: 'Соты достижений',
         shopSub: 'Полезные усиления экотропы', shopFreezes: 'Заморозок: {n}', shopBuy: 'Купить',
+        shopLoginToBuy: '🔒 Войти для покупки',
         shopNotEnough: 'Недостаточно Тамъя (нужно {cost})',
         shopBought: { freeze: 'Заморозка серии добавлена!', hearts: '5 жизней восстановлены!', marten: 'Открыт знак «Золотая куница»!' },
         avatarTitle: 'Выберите знак отличия',
@@ -2918,13 +3398,21 @@
         kbTitle: 'Башкирский алфавит и клавиатура', kbSub: '9 уникальных букв + полная раскладка',
         kbPrompt: 'Введите «Ҡурай» (используйте букву «ҡ»): Ҡурай', kbFullToggle: 'Полная клавиатура',
         chipPlaceholder: 'Нажимайте на плашки слов ниже...',
-        tutorTitle: 'Тел-Остаһы · ИИ-наставник', tutorSub: 'DeepSeek V4.1 Flash · Сингармонизм',
+        tutorTitle: 'Тел-Остаһы · ИИ-наставник', tutorSub: 'AI-наставник · Сингармонизм',
         tutorPlaceholder: 'Спросите о правиле или башкирском слове...',
         lessonCheck: 'Проверить', lessonNext: 'Далее', lessonOk: 'Афарин! Верно!', lessonErr: 'Ошибка. Правильный ответ:',
         lessonComplete: 'Урок пройден!', lessonReward: 'Начислено +25 Тамъя · +20 XP', lessonBack: 'На экотропу',
         lockedNodeMsg: 'Сначала завершите предыдущую соту!', chestClaimedMsg: 'Получено!', chestClaimBtn: 'Забрать +15 Тамъя',
         noHeartsMsg: 'Закончились жизни! Восстановите их в Лавке профиля.',
         resetStatsBtn: 'Сбросить прогресс', resetStatsDone: 'Сохранённый прогресс сброшен',
+        logoutShort: 'Выход',
+        logoutLong: '🚪 Выйти из аккаунта',
+        authBtn: '🔑 Войти в аккаунт',
+        authTabs: { login: '🔑 Войти', reg: '📝 Регистрация', tg: '✈️ Telegram', toTrail: 'К экотропе →' },
+        corpusTitle: 'Корпус башкирского языка · ТЗ №3',
+        lmsTitle: 'Управление классами · Учитель',
+        expertTitle: 'Экспертная панель · УФИЦ РАН',
+        sliceTitle: 'Нарезка корпуса и предложений',
         biomes: [
           { badge: 'Раздел 1 · Южный диалект', title: 'Пещера Шульган-Таш', short: 'Шульган-Таш', dialect: 'Көньяҡ · Южный', desc: 'Колыбель наскальной живописи: приветствия, семья и счёт.' },
           { badge: 'Раздел 2 · Литературный', title: 'Агидель и Торатау', short: 'Торатау', dialect: 'Әҙәби · Литер.', desc: 'Маршрут по шиханам: природа Башкортостана и прилагательные.' },
@@ -2936,10 +3424,35 @@
       {
         id: 'en', code: 'ENG', brandSub: 'Language Trail', langSelectTitle: 'Select language',
         themeToDark: 'Dark theme', themeToLight: 'Light theme',
-        tabs: { trail: 'Study', lb: 'Rankings', profile: 'Profile' },
+        tabs: { trail: 'Study', lb: 'Rankings', profile: 'Profile', auth: 'Auth' },
         titles: { streak: 'Day Streak', tamya: 'Tamya Points', hearts: 'Hearts' },
         goalTitle: 'Daily Goal', goalDesc: 'Finish 1 more Bashkir lesson to unlock the chest!',
-        tools: { lesson: 'Lesson', kb: 'Keyboard', tutor: 'AI Tutor' },
+        tools: {
+          lesson: 'Lesson',
+          kb: 'Keyboard',
+          tutor: 'AI Tutor',
+          corpus: '📜 Corpus #3',
+          roles: '👥 Auth / Roles',
+          lms: '👨‍🏫 LMS Class',
+          school: '🏫 + School',
+          expert: '⚖️ UFRC RAS',
+          slice: '✂️ Text Slicer'
+        },
+        roleLabels: { admin: 'Admin', student: 'Student', teacher: 'Teacher', linguist_expert: 'UFRC RAS', guest: 'Guest' },
+        roleNames: {
+          admin: '👑 Super Admin',
+          student: '🎓 Student (Grade 7A)',
+          teacher: '👨‍🏫 Bashkir Teacher',
+          linguist_expert: '🏛️ UFRC RAS Expert',
+          guest: '👤 Guest User'
+        },
+        guestBannerText: 'Guest mode: preview access (data is not saved)',
+        guestBannerBtn: 'Register',
+        guestSchoolClass: 'Preview Mode',
+        guestCardTitle: 'Guest Mode (data is not saved)',
+        guestCardDesc: 'You are in preview guest mode. Lessons are fully accessible, but sign in to an account to persist progress and join school leaderboards.',
+        guestLoginLabel: 'guest access',
+        guestOrgLabel: 'Preview mode without school binding',
         classWidgetTitle: 'Leaders · Grade 7-B', classWidgetSchool: 'Gymnasium 1', classWidgetBtn: 'Full Leaderboard',
         shopTitle: 'Burzyan Apiary Shop', shopDesc: 'Spend Tamya points on Streak Freeze & Hearts!',
         userLabel: 'Andrey · You', userName: 'Andrey', scoreUnit: 'Tamya',
@@ -2955,6 +3468,7 @@
         metrics: { streak: 'Streak', streakUnit: 'd', tamya: 'Tamya', words: 'Words', acc: 'Accuracy' },
         achTitle: 'Achievement Honeycombs',
         shopSub: 'Boosts for your Bashkir trail', shopFreezes: 'Freezes: {n}', shopBuy: 'Buy',
+        shopLoginToBuy: '🔒 Log in to buy',
         shopNotEnough: 'Not enough Tamya (need {cost})',
         shopBought: { freeze: 'Streak Freeze added!', hearts: '5 Hearts restored!', marten: 'Golden Marten Crest unlocked!' },
         avatarTitle: 'Choose avatar crest',
@@ -2964,13 +3478,21 @@
         kbTitle: 'Bashkir Alphabet & Keyboard', kbSub: '9 unique glyphs + full 4-layout drawer',
         kbPrompt: 'Type “Ҡурай” (use “ҡ” from QuickBar): Ҡурай', kbFullToggle: 'Full Keyboard',
         chipPlaceholder: 'Tap word chips below to build...',
-        tutorTitle: 'Tel-Ostahy · AI Tutor', tutorSub: 'DeepSeek V4.1 Flash · Vowel Harmony',
+        tutorTitle: 'Tel-Ostahy · AI Tutor', tutorSub: 'AI Tutor · Vowel Harmony',
         tutorPlaceholder: 'Ask about Bashkir grammar or vowel harmony...',
         lessonCheck: 'Check', lessonNext: 'Continue', lessonOk: 'Afarin! Correct!', lessonErr: 'Not quite. Answer:',
         lessonComplete: 'Lesson Complete!', lessonReward: '+25 Tamya · +20 XP earned', lessonBack: 'Back to Trail',
         lockedNodeMsg: 'Complete the previous honeycomb first!', chestClaimedMsg: 'Claimed!', chestClaimBtn: 'Claim +15 Tamya',
         noHeartsMsg: 'Out of hearts! Refill them in the Profile Shop.',
         resetStatsBtn: 'Reset Progress', resetStatsDone: 'Saved stats reset to defaults',
+        logoutShort: 'Log out',
+        logoutLong: '🚪 Log out of account',
+        authBtn: '🔑 Log In to Account',
+        authTabs: { login: '🔑 Log In', reg: '📝 Register', tg: '✈️ Telegram', toTrail: 'To Trail →' },
+        corpusTitle: 'Bashkir Language Corpus · Task #3',
+        lmsTitle: 'Class Management · Teacher',
+        expertTitle: 'Expert Panel · UFRC RAS',
+        sliceTitle: 'Sentence & Corpus Slicer',
         biomes: [
           { badge: 'Section 1 · Southern Dialect', title: 'Shulgan-Tash Cave', short: 'Shulgan-Tash', dialect: 'Southern', desc: 'Ancient cave art route: greetings, family & numbers in Bashkir.' },
           { badge: 'Section 2 · Literary', title: 'Agidel & Toratau', short: 'Toratau', dialect: 'Standard', desc: 'Sacred shihan hills: Bashkortostan nature and adjectives.' },
@@ -2982,10 +3504,35 @@
       {
         id: 'kk', code: 'ҚАЗ', brandSub: 'Тіл-соқпағы', langSelectTitle: 'Тілді таңдаңыз',
         themeToDark: 'Қараңғы тақырып', themeToLight: 'Жарық тақырып',
-        tabs: { trail: 'Оқу', lb: 'Рейтинг', profile: 'Профиль' },
+        tabs: { trail: 'Оқу', lb: 'Рейтинг', profile: 'Профиль', auth: 'Кіру' },
         titles: { streak: 'Күндер сериясы', tamya: '«Тамъя» ұпайы', hearts: 'Жүректер' },
         goalTitle: 'Күндік мақсат', goalDesc: 'Сандықты ашу үшін тағы 1 башқұрт сабағын өтіңіз!',
-        tools: { lesson: 'Сабақ', kb: 'Пернетақта', tutor: 'Тіл-Ұстазы' },
+        tools: {
+          lesson: 'Сабақ',
+          kb: 'Пернетақта',
+          tutor: 'Тіл-Ұстазы',
+          corpus: '📜 Корпус ТЗ №3',
+          roles: '👥 Кіру / Рөлдер',
+          lms: '👨‍🏫 LMS Сынып',
+          school: '🏫 + Мектеп',
+          expert: '⚖️ УФҒО ҒА',
+          slice: '✂️ Кесу'
+        },
+        roleLabels: { admin: 'Әкімші', student: 'Оқушы', teacher: 'Мұғалім', linguist_expert: 'УФҒО ҒА', guest: 'Қонақ' },
+        roleNames: {
+          admin: '👑 Бас әкімші',
+          student: '🎓 Оқушы (7А сынып)',
+          teacher: '👨‍🏫 Башқұрт тілі мұғалімі',
+          linguist_expert: '🏛️ УФҒО ҒА сарапшысы',
+          guest: '👤 Қонақ режимі'
+        },
+        guestBannerText: 'Қонақ режимі: танысу қолжетімділігі (деректер сақталмайды)',
+        guestBannerBtn: 'Тіркелу',
+        guestSchoolClass: 'Танысу режимі',
+        guestCardTitle: 'Қонақ режимі (деректер сақталмайды)',
+        guestCardDesc: 'Сіз танысу режиміндесіз. Сабақтарды өту шектеусіз қолжетімді, бірақ прогресті сақтау және рейтингке қатысу үшін аккаунтқа кіріңіз.',
+        guestLoginLabel: 'қонақ қатынасы',
+        guestOrgLabel: 'Танысу режимі (мектепсіз)',
         classWidgetTitle: 'Көшбасшылар · 7 «Б»', classWidgetSchool: '№1 гимназия', classWidgetBtn: 'Толық кесте',
         shopTitle: 'Бөрйән омартасы', shopDesc: '«Тамъя» ұпайларын серияны сақтауға және жүректерге айырбастаңыз!',
         userLabel: 'Андрей · Сіз', userName: 'Андрей', scoreUnit: 'Тамъя',
@@ -3001,6 +3548,7 @@
         metrics: { streak: 'Серия', streakUnit: 'күн', tamya: 'Тамъя', words: 'Сөздік', acc: 'Дәлдік' },
         achTitle: 'Жетістік ұяшықтары',
         shopSub: 'Башқұрт тілі соқпағына көмек', shopFreezes: 'Мұздату: {n}', shopBuy: 'Алу',
+        shopLoginToBuy: '🔒 Сатып алу үшін кіріңіз',
         shopNotEnough: 'Тамъя жеткіліксіз ({cost} қажет)',
         shopBought: { freeze: 'Серияны мұздату қосылды!', hearts: '5 жүрек толтырылды!', marten: '«Алтын сусар» белгісі ашылды!' },
         avatarTitle: 'Белгіні таңдаңыз',
@@ -3010,13 +3558,21 @@
         kbTitle: 'Башқұрт әліпбиі мен пернетақта', kbSub: '9 бірегей әріп + 4 тілді пернетақта',
         kbPrompt: 'Башқұртша «Ҡурай» сөзін теріңіз («ҡ» әрпімен): Ҡурай', kbFullToggle: 'Толық пернетақта',
         chipPlaceholder: 'Төмендегі сөздерді басып жинаңыз...',
-        tutorTitle: 'Тел-Остаһы · ЖИ-ұстаз', tutorSub: 'DeepSeek V4.1 Flash · Сингармонизм',
+        tutorTitle: 'Тел-Остаһы · ЖИ-ұстаз', tutorSub: 'ЖИ-ұстаз · Сингармонизм',
         tutorPlaceholder: 'Үндестік заңы немесе сөз туралы сұраңыз...',
         lessonCheck: 'Тексеру', lessonNext: 'Әрі қарай', lessonOk: 'Афарин! Жарайсың!', lessonErr: 'Қате. Дұрыс жауабы:',
         lessonComplete: 'Сабақ аяқталды!', lessonReward: '+25 Тамъя · +20 XP берілді', lessonBack: 'Соқпаққа оралу',
         lockedNodeMsg: 'Алдымен алдыңғы ұяшықты аяқтаңыз!', chestClaimedMsg: 'Алынды!', chestClaimBtn: '+15 Тамъя алу',
         noHeartsMsg: 'Жүректер таусылды! Профиль дүкенінен толтырыңыз.',
         resetStatsBtn: 'Прогресті қалпына келтіру', resetStatsDone: 'Сақталған статистика тазартылды',
+        logoutShort: 'Шығу',
+        logoutLong: '🚪 Аккаунттан шығу',
+        authBtn: '🔑 Аккаунтқа кіру',
+        authTabs: { login: '🔑 Кіру', reg: '📝 Тіркелу', tg: '✈️ Telegram', toTrail: 'Эко-соқпаққа →' },
+        corpusTitle: 'Башқұрт тілі корпусы · ТЗ №3',
+        lmsTitle: 'Сыныптарды басқару · Мұғалім',
+        expertTitle: 'Сарапшы тақтасы · УФҒО ҒА',
+        sliceTitle: 'Корпус пен сөйлемдерді кесу',
         biomes: [
           { badge: '1-бөлім · Оңтүстік диалект', title: 'Шүлген-Таш үңгірі', short: 'Шүлген-Таш', dialect: 'Оңтүстік', desc: 'Башқұртша сәлемдесу, отбасы және сандар (түркілік үндестік).' },
           { badge: '2-бөлім · Әдеби тіл', title: 'Ағидел мен Торатау', short: 'Торатау', dialect: 'Әдеби', desc: 'Башқұртстан табиғаты мен сын есімдер.' },
@@ -3078,7 +3634,7 @@
       }
     };
 
-    /* 4 Biome-specific 6-step lessons covering all 6 formats */
+    
     const lessonSteps = [
       {
         type: 'match',
@@ -3722,7 +4278,7 @@
     function navTo(screen, scrollTarget) {
       state.currentView = screen;
       saveState();
-      ['trail', 'leaderboard', 'profile'].forEach(id => {
+      ['trail', 'leaderboard', 'profile', 'auth'].forEach(id => {
         const view = document.getElementById('view-' + id);
         if (view) {
           view.classList.toggle('hidden', id !== screen);
@@ -3733,6 +4289,11 @@
         const dBtn = document.getElementById('tab-top-' + id);
         if (dBtn) dBtn.classList.toggle('active', id === screen);
       });
+
+      if (screen === 'auth') {
+        renderAuthStatusCard();
+        loadAuthSchoolsAndClasses();
+      }
 
       if (scrollTarget === 'shop') {
         setTimeout(() => {
@@ -3797,6 +4358,18 @@
       document.getElementById('tool-sprint-text').textContent = L.tools.lesson;
       document.getElementById('tool-kb-text').textContent = L.tools.kb;
       document.getElementById('tool-tutor-text').textContent = L.tools.tutor;
+      const elCorpus = document.getElementById('tool-corpus-text');
+      if (elCorpus && L.tools.corpus) elCorpus.textContent = L.tools.corpus;
+      const elReg = document.getElementById('tool-reg-text');
+      if (elReg && L.tools.roles) elReg.textContent = L.tools.roles;
+      const elLms = document.getElementById('tool-lms-text');
+      if (elLms && L.tools.lms) elLms.textContent = L.tools.lms;
+      const elSchool = document.getElementById('tool-school-text');
+      if (elSchool && L.tools.school) elSchool.textContent = L.tools.school;
+      const elExpert = document.getElementById('tool-expert-text');
+      if (elExpert && L.tools.expert) elExpert.textContent = L.tools.expert;
+      const elSlice = document.getElementById('tool-slice-text');
+      if (elSlice && L.tools.slice) elSlice.textContent = L.tools.slice;
 
       const isBiomeUnlocked = bIdx === 0 || state.biomeProgress[bIdx - 1] >= 4;
       const offsets = [0, 48, -48, 0];
@@ -3971,14 +4544,19 @@
 
       if (step.type === 'match') {
         contentHtml += `
-          <div class="ios-glass-card" style="border-radius: 22px; padding: 14px 16px; display: flex; align-items: center; gap: 12px;">
-            <div style="width: 46px; height: 46px; border-radius: 15px; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+          <div class="ios-glass-card" style="border-radius: 22px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div style="width: 46px; height: 46px; border-radius: 15px; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+              </div>
+              <div>
+                <div style="font-size: 17px; font-weight: 900; color: var(--primary);">${step.wordBa}</div>
+                <div style="font-size: 12px; font-weight: 700; color: var(--ink-soft);">${step.phonetic}</div>
+              </div>
             </div>
-            <div>
-              <div style="font-size: 17px; font-weight: 900; color: var(--primary);">${step.wordBa}</div>
-              <div style="font-size: 12px; font-weight: 700; color: var(--ink-soft);">${step.phonetic}</div>
-            </div>
+            <button type="button" onclick="speakLessonPhrase('${escapeHtml(step.wordBa)}')" style="width: 38px; height: 38px; border-radius: 12px; background: var(--surface-muted-fill); color: var(--primary); border: 1px solid var(--border-card); display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0;" title="Озвучить слово">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+            </button>
           </div>
           <div style="display: flex; flex-direction: column; gap: 10px;">
             ${step.options.map(opt => `
@@ -3995,10 +4573,17 @@
       } else if (step.type === 'chips') {
         const chips = step.chipsByLang[L.id];
         contentHtml += `
-          <div class="ios-glass-card" style="border-radius: 22px; padding: 14px 16px; display: flex; align-items: center; gap: 12px;">
-            <div style="width: 44px; height: 44px; border-radius: 14px; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L9.5 8.5 3 11l6.5 2.5L12 20l2.5-6.5L21 11l-6.5-2.5z"/></svg>
+          <div class="ios-glass-card" style="border-radius: 22px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div style="width: 44px; height: 44px; border-radius: 14px; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L9.5 8.5 3 11l6.5 2.5L12 20l2.5-6.5L21 11l-6.5-2.5z"/></svg>
+              </div>
+              <span style="font-size: 16px; font-weight: 900; color: var(--primary);">${step.promptBa}</span>
             </div>
+            <button type="button" onclick="speakLessonPhrase('${escapeHtml(step.promptBa.replace(/[«»]/g, ''))}')" style="width: 38px; height: 38px; border-radius: 12px; background: var(--surface-muted-fill); color: var(--primary); border: 1px solid var(--border-card); display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0;" title="Озвучить фразу">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+            </button>
+          </div>
             <span style="font-size: 16px; font-weight: 900; color: var(--primary);">${step.promptBa}</span>
           </div>
           <div id="lesson-chip-slot" style="min-height: 62px; padding: 12px; border-radius: 20px; border: 2px dashed var(--border-control); background: var(--surface-chip-slot); display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
@@ -4041,15 +4626,20 @@
         `;
       } else if (step.type === 'dialogue') {
         contentHtml += `
-          <div class="ios-glass-card" style="border-radius: 22px; padding: 14px 16px; display: flex; align-items: flex-start; gap: 12px;">
-            <div style="width: 44px; height: 44px; border-radius: 14px; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+          <div class="ios-glass-card" style="border-radius: 22px; padding: 14px 16px; display: flex; align-items: flex-start; justify-content: space-between;">
+            <div style="display: flex; align-items: flex-start; gap: 12px;">
+              <div style="width: 44px; height: 44px; border-radius: 14px; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; flex-shrink: 0;" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+              </div>
+              <div>
+                <div style="font-size: 10px; font-weight: 900; color: var(--secondary); text-transform: uppercase;">Тел-Остаһы</div>
+                <div style="font-size: 16px; font-weight: 900; color: var(--primary); margin-top: 2px;">${step.promptBa}</div>
+                <div style="font-size: 11px; font-weight: 700; color: var(--ink-soft); margin-top: 2px;">${step.phonetic}</div>
+              </div>
             </div>
-            <div>
-              <div style="font-size: 10px; font-weight: 900; color: var(--secondary); text-transform: uppercase;">Тел-Остаһы</div>
-              <div style="font-size: 16px; font-weight: 900; color: var(--primary); margin-top: 2px;">${step.promptBa}</div>
-              <div style="font-size: 11px; font-weight: 700; color: var(--ink-soft); margin-top: 2px;">${step.phonetic}</div>
-            </div>
+            <button type="button" onclick="speakLessonPhrase('${escapeHtml(step.promptBa)}')" style="width: 38px; height: 38px; border-radius: 12px; background: var(--surface-muted-fill); color: var(--primary); border: 1px solid var(--border-card); display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0;" title="Озвучить реплику">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+            </button>
           </div>
           <div style="display: flex; flex-direction: column; gap: 10px;">
             ${step.options.map(opt => `
@@ -4223,6 +4813,20 @@
       closeLesson();
       renderAll();
       triggerHaptic('success');
+
+      if (!state.isGuest) {
+        fetch('/api/trail/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            user_id: 1,
+            node_id: lState.biomeIdx * 5 + lState.nodeIdx + 1,
+            correct_count: steps.length - lState.mistakes,
+            total_count: steps.length,
+            words_learned_increment: 6
+          })
+        }).catch(() => {});
+      }
     }
 
     function openChestModal(biomeIdx) {
@@ -4280,7 +4884,7 @@
       renderAll();
     }
 
-    /* Leaderboard */
+    
     function getSortedClassRows() {
       return leaderboardBase.class.map(item => ({
         ...item,
@@ -4289,6 +4893,11 @@
     }
 
     function setLeaderboardCategory(cat) {
+      if ((cat === 'class' || cat === 'school') && (state.isGuest || state.userRole === 'guest')) {
+        showToast('🔒 Рейтинг школы и класса привязан к базе данных. Пожалуйста, войдите в аккаунт.');
+        navTo('auth');
+        return;
+      }
       state.leaderboardCat = cat;
       saveState();
       renderLeaderboard();
@@ -4303,13 +4912,33 @@
     function renderLeaderboard() {
       const L = lang();
       const cat = state.leaderboardCat;
+      const isGuestUser = Boolean(state.isGuest || state.userRole === 'guest');
 
       document.getElementById('lb-region-badge-text').textContent = L.lbRegionBadge;
       document.getElementById('lb-header-title').textContent = L.lbHeaderTitle;
-      document.getElementById('lb-cat-class').textContent = L.catClass;
-      document.getElementById('lb-cat-school').textContent = L.catSchool;
-      document.getElementById('lb-cat-republic').textContent = L.catRepublic;
-      document.getElementById('lb-sticky-btn').textContent = L.stickyBtn;
+
+      const catClassBtn = document.getElementById('lb-cat-class');
+      const catSchoolBtn = document.getElementById('lb-cat-school');
+      const catRepublicBtn = document.getElementById('lb-cat-republic');
+
+      if (isGuestUser) {
+        catClassBtn.innerHTML = '🔒 ' + L.catClass;
+        catClassBtn.title = 'Рейтинг класса доступен после авторизации в аккаунт';
+        catClassBtn.style.opacity = '0.7';
+
+        catSchoolBtn.innerHTML = '🔒 ' + L.catSchool;
+        catSchoolBtn.title = 'Рейтинг школы доступен после авторизации в аккаунт';
+        catSchoolBtn.style.opacity = '0.7';
+      } else {
+        catClassBtn.textContent = L.catClass;
+        catClassBtn.title = '';
+        catClassBtn.style.opacity = '1';
+
+        catSchoolBtn.textContent = L.catSchool;
+        catSchoolBtn.title = '';
+        catSchoolBtn.style.opacity = '1';
+      }
+      catRepublicBtn.textContent = L.catRepublic;
 
       ['class', 'school', 'republic'].forEach(c => {
         document.getElementById('lb-cat-' + c).classList.toggle('active', c === cat);
@@ -4400,21 +5029,32 @@
         `;
       }).join('');
 
-      const selfIdx = allRowsForRank.findIndex(r => r.isUser || r.isUserSchool);
-      const rankNum = selfIdx >= 0 ? selfIdx + 1 : 1;
-      const tpl = cat === 'class' ? L.stickyClass : cat === 'school' ? L.stickySchool : L.stickyRepublic;
-      document.getElementById('lb-sticky-num').textContent = String(rankNum);
-      document.getElementById('lb-sticky-rank').textContent = tpl.replace('{rank}', String(rankNum));
-
-      if (selfIdx > 0) {
-        const gap = Math.max(1, allRowsForRank[selfIdx - 1].score - allRowsForRank[selfIdx].score);
-        document.getElementById('lb-sticky-sub').textContent = L.stickyGap.replace('{gap}', String(gap));
+      const stickyBtn = document.getElementById('lb-sticky-btn');
+      if (isGuestUser) {
+        document.getElementById('lb-sticky-num').textContent = '👤';
+        document.getElementById('lb-sticky-rank').textContent = 'Гостевой ознакомительный доступ';
+        document.getElementById('lb-sticky-sub').textContent = 'Рейтинг и баллы сохраняются после входа в аккаунт';
+        stickyBtn.textContent = '🔑 Войти';
+        stickyBtn.onclick = () => navTo('auth');
       } else {
-        document.getElementById('lb-sticky-sub').textContent = L.stickyLead;
+        const selfIdx = allRowsForRank.findIndex(r => r.isUser || r.isUserSchool);
+        const rankNum = selfIdx >= 0 ? selfIdx + 1 : 1;
+        const tpl = cat === 'class' ? L.stickyClass : cat === 'school' ? L.stickySchool : L.stickyRepublic;
+        document.getElementById('lb-sticky-num').textContent = String(rankNum);
+        document.getElementById('lb-sticky-rank').textContent = tpl.replace('{rank}', String(rankNum));
+
+        if (selfIdx > 0) {
+          const gap = Math.max(1, allRowsForRank[selfIdx - 1].score - allRowsForRank[selfIdx].score);
+          document.getElementById('lb-sticky-sub').textContent = L.stickyGap.replace('{gap}', String(gap));
+        } else {
+          document.getElementById('lb-sticky-sub').textContent = L.stickyLead;
+        }
+        stickyBtn.textContent = L.stickyBtn;
+        stickyBtn.onclick = () => startActiveLesson();
       }
     }
 
-    /* Profile, Achievements, Shop */
+    
     function renderProfile() {
       const L = lang();
       const classRows = getSortedClassRows();
@@ -4424,9 +5064,31 @@
       const levelXp = state.totalXp % 200;
       const remXp = 200 - levelXp;
 
-      document.getElementById('profile-user-name').textContent = L.userName;
+      document.getElementById('profile-user-name').textContent = state.userName || L.userName;
       document.getElementById('profile-rank-badge').textContent = L.profileRank.replace('{rank}', String(classRank));
-      document.getElementById('profile-school-class').textContent = L.profileSchoolClass;
+      document.getElementById('profile-school-class').textContent = state.isGuest ? (L.guestSchoolClass || 'Ознакомительный режим') : (state.userClass ? `ГБОУ РПМГ №1 · ${state.userClass} класс` : L.profileSchoolClass);
+      const prBadge = document.getElementById('profile-role-badge');
+      if (prBadge) prBadge.textContent = getRoleName(state.userRole || 'admin', L.id);
+
+      const isGuest = Boolean(state.isGuest || state.userRole === 'guest');
+      const authBtn = document.getElementById('profile-auth-btn');
+      const logoutBtn = document.getElementById('profile-logout-btn');
+      const guestCard = document.getElementById('profile-guest-card');
+      const bottomLogoutBtn = document.getElementById('profile-bottom-logout-btn');
+
+      if (authBtn) authBtn.classList.toggle('hidden', !isGuest);
+      if (guestCard) guestCard.classList.toggle('hidden', !isGuest);
+      if (logoutBtn) logoutBtn.classList.toggle('hidden', isGuest);
+      if (bottomLogoutBtn) bottomLogoutBtn.classList.toggle('hidden', isGuest);
+
+      const profLms = document.getElementById('prof-role-lms-card');
+      const profExpert = document.getElementById('prof-role-expert-card');
+      if (profLms) {
+        profLms.style.display = hasRole(['teacher', 'admin']) ? 'flex' : 'none';
+      }
+      if (profExpert) {
+        profExpert.style.display = hasRole(['linguist_expert', 'admin']) ? 'flex' : 'none';
+      }
       document.getElementById('profile-level-title').textContent = L.profileLevel.replace('{level}', String(curLevel));
       document.getElementById('profile-level-rem').textContent = L.profileRem.replace('{rem}', String(remXp));
       document.getElementById('profile-xp-bar').style.width = Math.min(100, Math.round((levelXp / 200) * 100)) + '%';
@@ -4508,10 +5170,16 @@
         }
       ];
 
+      const isGuestUser = Boolean(state.isGuest || state.userRole === 'guest');
+
       document.getElementById('shop-items-grid').innerHTML = shopItems.map(item => {
         const ownedMarten = item.id === 'marten' && state.martenUnlocked;
         const fullHearts = item.id === 'hearts' && state.hearts >= state.maxHearts;
-        const disabled = ownedMarten || fullHearts;
+        const disabled = isGuestUser || ownedMarten || fullHearts;
+        let btnText = `${L.shopBuy} · ${item.cost} ${L.scoreUnit}`;
+        if (ownedMarten) btnText = '✓';
+        else if (isGuestUser) btnText = L.shopLoginToBuy || '🔒 Войти для покупки';
+
         return `
           <div style="padding: 13px; border-radius: 20px; background: var(--shop-card-bg); border: 1px solid var(--border-card); display: flex; flex-direction: column; justify-content: space-between; gap: 10px;">
             <div style="display: flex; align-items: flex-start; gap: 10px;">
@@ -4521,15 +5189,24 @@
                 <div style="font-size: 10px; color: var(--ink-soft); margin-top: 2px;">${item.desc[L.id]}</div>
               </div>
             </div>
-            <button type="button" onclick="buyShopItem('${item.id}', ${item.cost})" class="btn-3d btn-3d-honey" style="width: 100%; padding: 8px; font-size: 11px; border-radius: 12px;" ${disabled ? 'disabled' : ''}>
-              ${ownedMarten ? '✓' : `${L.shopBuy} · ${item.cost} ${L.scoreUnit}`}
+            <button type="button" onclick="${isGuestUser ? 'buyShopItemGuest()' : `buyShopItem('${item.id}', ${item.cost})`}" class="btn-3d ${isGuestUser ? '' : 'btn-3d-honey'}" style="width: 100%; padding: 8px; font-size: 11px; border-radius: 12px; ${isGuestUser ? 'background: rgba(148, 163, 184, 0.2); color: var(--ink-soft); border: 1px solid var(--border-control); cursor: pointer;' : ''}" ${disabled && !isGuestUser ? 'disabled' : ''} title="${isGuestUser ? 'Покупки сохраняются в базе данных только для авторизованных пользователей' : ''}">
+              ${btnText}
             </button>
           </div>
         `;
       }).join('');
     }
 
+    function buyShopItemGuest() {
+      showToast('🔒 Покупки в магазине сохраняются в базе данных только для авторизованных пользователей. Пожалуйста, войдите в аккаунт.');
+      navTo('auth');
+    }
+
     function buyShopItem(itemId, cost) {
+      if (state.isGuest || state.userRole === 'guest') {
+        buyShopItemGuest();
+        return;
+      }
       const L = lang();
       if (state.tamya < cost) {
         triggerHaptic('error');
@@ -4547,10 +5224,23 @@
       renderAll();
       triggerHaptic('success');
       showToast(L.shopBought[itemId] || '✓');
+
+      if (!state.isGuest) {
+        fetch('/api/shop/buy', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ user_id: 1, item_id: itemId === 'hearts' ? 'refill_hearts' : itemId })
+        }).catch(() => {});
+      }
     }
 
-    /* Badge Modal */
+    
     function openBadgeModal() {
+      if (state.isGuest || state.userRole === 'guest') {
+        showToast('🔒 Кастомизация знаков отличия сохраняется только после авторизации в аккаунт.');
+        navTo('auth');
+        return;
+      }
       const L = lang();
       document.getElementById('badge-modal-title').textContent = L.badgeModalTitle;
       document.getElementById('badge-modal-sub').textContent = L.badgeModalSub;
@@ -4580,7 +5270,7 @@
       renderLeaderboard();
     }
 
-    /* Alphabet & Keyboard Modal */
+    
     function openKbModal() {
       const L = lang();
       document.getElementById('kb-modal-title').textContent = L.kbTitle;
@@ -4624,7 +5314,7 @@
       }
     }
 
-    /* AI Tutor ("Тел-Остаһы") */
+    
     function openTutorModal(contextText) {
       const L = lang();
       document.getElementById('tutor-title').textContent = L.tutorTitle;
@@ -4714,8 +5404,23 @@
 
     function askTutorQuick(text) {
       state.tutorMessages.push({ role: 'user', text });
-      state.tutorMessages.push({ role: 'ai', text: generateTutorReply(text) });
+      const aiMsg = { role: 'ai', text: generateTutorReply(text) };
+      state.tutorMessages.push(aiMsg);
       renderTutor();
+
+      fetch('/api/ai/ask', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: text, context: lang().id })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.answer) {
+          aiMsg.text = data.answer;
+          renderTutor();
+        }
+      })
+      .catch(() => {});
     }
 
     function sendTutorQuestion() {
@@ -4749,25 +5454,222 @@
       document.getElementById('tab-top-trail-text').textContent = L.tabs.trail;
       document.getElementById('tab-top-leaderboard-text').textContent = L.tabs.lb;
       document.getElementById('tab-top-profile-text').textContent = L.tabs.profile;
+      const topAuth = document.getElementById('tab-top-auth-text');
+      if (topAuth) topAuth.textContent = L.tabs.auth || 'Вход';
+
       document.getElementById('tab-nav-trail-text').textContent = L.tabs.trail;
       document.getElementById('tab-nav-leaderboard-text').textContent = L.tabs.lb;
       document.getElementById('tab-nav-profile-text').textContent = L.tabs.profile;
+      const navAuth = document.getElementById('tab-nav-auth-text');
+      if (navAuth) navAuth.textContent = L.tabs.auth || 'Вход';
+
+      // Dynamic guest banner localization
+      const gbText = document.getElementById('guest-banner-text');
+      if (gbText && L.guestBannerText) gbText.textContent = L.guestBannerText;
+      const gbBtn = document.getElementById('guest-banner-btn');
+      if (gbBtn && L.guestBannerBtn) gbBtn.textContent = L.guestBannerBtn;
+
+      // Profile guest card localization
+      const pgcTitle = document.getElementById('profile-guest-card-title');
+      if (pgcTitle && L.guestCardTitle) pgcTitle.textContent = L.guestCardTitle;
+      const pgcDesc = document.getElementById('profile-guest-card-desc');
+      if (pgcDesc && L.guestCardDesc) pgcDesc.textContent = L.guestCardDesc;
+
+      // Profile buttons localization
+      const pResetBtn = document.getElementById('profile-reset-btn');
+      if (pResetBtn && L.resetStatsBtn) pResetBtn.textContent = L.resetStatsBtn;
+      const pBottomLogout = document.getElementById('profile-bottom-logout-btn');
+      if (pBottomLogout && L.logoutLong) pBottomLogout.textContent = L.logoutLong;
+      const pLogout = document.getElementById('profile-logout-btn');
+      if (pLogout && L.logoutShort) pLogout.textContent = L.logoutShort;
+      const pAuthBtn = document.getElementById('profile-auth-btn');
+      if (pAuthBtn && L.authBtn) pAuthBtn.textContent = L.authBtn;
+
+      // Auth subtabs pills localization
+      const authPillLogin = document.getElementById('auth-pill-login');
+      if (authPillLogin && L.authTabs) authPillLogin.textContent = L.authTabs.login;
+      const authPillReg = document.getElementById('auth-pill-reg');
+      if (authPillReg && L.authTabs) authPillReg.textContent = L.authTabs.reg;
+      const authPillTg = document.getElementById('auth-pill-tg');
+      if (authPillTg && L.authTabs) authPillTg.textContent = L.authTabs.tg;
+      const authTrailBtn = document.getElementById('auth-status-trail-btn');
+      if (authTrailBtn && L.authTabs) authTrailBtn.textContent = L.authTabs.toTrail;
+      const authLogoutBtn = document.getElementById('auth-status-logout-btn');
+      if (authLogoutBtn && L.logoutShort) authLogoutBtn.textContent = L.logoutShort;
+
+      // Modal titles localization
+      const corpusMTitle = document.getElementById('daily-corpus-modal-title');
+      if (corpusMTitle && L.corpusTitle) corpusMTitle.textContent = L.corpusTitle;
+      const lmsMTitle = document.getElementById('lms-modal-title');
+      if (lmsMTitle && L.lmsTitle) lmsMTitle.textContent = L.lmsTitle;
+      const expertMTitle = document.getElementById('expert-modal-title');
+      if (expertMTitle && L.expertTitle) expertMTitle.textContent = L.expertTitle;
+      const sliceMTitle = document.getElementById('slice-modal-title');
+      if (sliceMTitle && L.sliceTitle) sliceMTitle.textContent = L.sliceTitle;
 
       renderHeaderMetrics();
       renderThemeToggle();
+      renderRoleAccess();
       renderTrail();
       renderLeaderboard();
       renderProfile();
+      renderAuthStatusCard();
       if (state.lesson.active) renderLessonStep();
     }
 
     /* ============================================================
-       HACKATHON TASK #3 CONTROLLERS: CORPUS, LMS, REG, EXPERT
+       HACKATHON TASK #3 CONTROLLERS: CORPUS, LMS, REG, EXPERT, RBAC
        ============================================================ */
 
-    let selectedRegRole = 'student';
+    let selectedRegRole = 'admin';
     let currentDailyFragment = null;
     let currentAudioObj = null;
+
+    function speakLessonPhrase(phrase) {
+      if (!phrase) return;
+      triggerHaptic('selection');
+      fetch('/api/tts/synthesize', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: phrase, lang: 'ba', voice: 'bak_aigul', speed: 1.15 })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.audio_url) {
+          if (currentAudioObj) {
+            try { currentAudioObj.pause(); } catch(e) {}
+          }
+          currentAudioObj = new Audio(data.audio_url);
+          currentAudioObj.play().catch(() => {});
+        } else if ('speechSynthesis' in window) {
+          const utter = new SpeechSynthesisUtterance(phrase);
+          utter.lang = 'ru-RU';
+          utter.rate = 0.85;
+          window.speechSynthesis.speak(utter);
+        }
+      })
+      .catch(() => {
+        if ('speechSynthesis' in window) {
+          try {
+            const utter = new SpeechSynthesisUtterance(phrase);
+            utter.lang = 'ru-RU';
+            utter.rate = 0.85;
+            window.speechSynthesis.speak(utter);
+          } catch(e) {}
+        }
+      });
+    }
+
+    function hasRole(allowedRoles) {
+      const currentRole = state.userRole;
+      if (currentRole === 'admin') return true;
+      if (!currentRole || state.isGuest || currentRole === 'guest') return false;
+      return allowedRoles.includes(currentRole);
+    }
+
+    function getRoleName(role, langId) {
+      const targetId = langId || (lang() && lang().id) || 'ru';
+      const curL = i18n.find(l => l.id === targetId) || i18n[1];
+      if (curL && curL.roleNames && curL.roleNames[role]) {
+        return curL.roleNames[role];
+      }
+      return getRoleNameRu(role);
+    }
+
+    function getRoleNameRu(role) {
+      const map = {
+        admin: '👑 Главный администратор',
+        student: '🎓 Ученик (7А класс)',
+        teacher: '👨‍🏫 Учитель башкирского языка',
+        linguist_expert: '🏛️ Эксперт УФИЦ РАН',
+        guest: '👤 Гость платформы'
+      };
+      return map[role] || role;
+    }
+
+    function enterAsGuest() {
+      state.userRole = 'guest';
+      state.isGuest = true;
+      state.userName = 'Гость платформы';
+      state.userLogin = 'guest';
+      state.userClass = '';
+      window.localStorage.setItem('basklingo_has_entered', 'true');
+      saveState();
+      renderRoleAccess();
+      renderHeaderMetrics();
+      renderProfile();
+      renderAuthStatusCard();
+      closeRegModal();
+      showToast('Вход выполнен в гостевом режиме');
+      navTo('trail');
+    }
+
+    function loginAsRole(role) {
+      if (role === 'guest') {
+        enterAsGuest();
+        return;
+      }
+      navTo('auth');
+      switchAuthSubTab('login');
+      showToast('Для входа под ролью ' + getRoleNameRu(role) + ' введите логин и пароль');
+    }
+
+    function switchAuthView(mode) {
+      if (mode === 'switch') {
+        switchAuthSubTab('demo');
+      } else {
+        switchAuthSubTab('reg');
+      }
+    }
+
+    function renderRoleAccess() {
+      const L = lang();
+      const role = state.userRole || (state.isGuest ? 'guest' : 'student');
+      const roleIcon = document.getElementById('hdr-role-icon');
+      const roleLabel = document.getElementById('hdr-role-label');
+      const authCurrentBadge = document.getElementById('auth-current-role-badge');
+      const guestBanner = document.getElementById('guest-alert-banner');
+      const profileRoleBadge = document.getElementById('profile-role-badge');
+
+      const icons = { admin: '👑', student: '🎓', teacher: '👨‍🏫', linguist_expert: '🏛️', guest: '👤' };
+
+      if (roleIcon) roleIcon.textContent = icons[role] || '👤';
+      if (roleLabel) roleLabel.textContent = (L.roleLabels && L.roleLabels[role]) || role;
+      if (authCurrentBadge) authCurrentBadge.textContent = getRoleName(role, L.id);
+      if (profileRoleBadge) profileRoleBadge.textContent = getRoleName(role, L.id);
+
+      if (guestBanner) {
+        guestBanner.classList.toggle('hidden', role !== 'guest');
+      }
+
+      const btnReg = document.getElementById('tool-btn-reg');
+      const btnLms = document.getElementById('tool-btn-lms');
+      const btnSchool = document.getElementById('tool-btn-school');
+      const btnExpert = document.getElementById('tool-btn-expert');
+      const btnSlice = document.getElementById('tool-btn-slice');
+
+      const canLms = hasRole(['teacher', 'admin']);
+      const canSchool = hasRole(['admin', 'teacher']);
+      const canExpert = hasRole(['linguist_expert', 'admin']);
+      const canAdmin = hasRole(['admin']);
+
+      // В quick-tools-row на главном экране тропы специализированные ролевые кнопки скрыты,
+      // чтобы экран тропы оставался чистым и ориентированным на обучение языку.
+      if (btnReg) btnReg.style.display = 'none';
+      if (btnLms) btnLms.style.display = 'none';
+      if (btnSchool) btnSchool.style.display = 'none';
+      if (btnExpert) btnExpert.style.display = 'none';
+      if (btnSlice) btnSlice.style.display = 'none';
+
+      const profLms = document.getElementById('prof-role-lms-card');
+      const profExpert = document.getElementById('prof-role-expert-card');
+      if (profLms) {
+        profLms.style.display = canLms ? 'flex' : 'none';
+      }
+      if (profExpert) {
+        profExpert.style.display = canExpert ? 'flex' : 'none';
+      }
+    }
 
     function selectRegRole(role) {
       selectedRegRole = role;
@@ -4786,22 +5688,38 @@
       });
     }
 
-    function openRegModal() {
+    function openRegModal(preferredTab = 'login') {
       const user = window.Telegram?.WebApp?.initDataUnsafe?.user;
       if (user) {
-        if (!document.getElementById('reg-name').value) {
-          document.getElementById('reg-name').value = [user.first_name, user.last_name].filter(Boolean).join(' ');
+        const nameInput = document.getElementById('auth-reg-fullname');
+        if (nameInput && !nameInput.value) {
+          nameInput.value = [user.first_name, user.last_name].filter(Boolean).join(' ');
         }
-        if (!document.getElementById('reg-username').value && user.username) {
-          document.getElementById('reg-username').value = '@' + user.username;
+        const userTg = document.getElementById('auth-reg-tg-user');
+        if (userTg && !userTg.value && user.username) {
+          userTg.value = '@' + user.username;
         }
       }
-      loadSchoolsForSelect();
-      document.getElementById('reg-modal').classList.remove('hidden');
+      loadAuthSchoolsAndClasses();
+      navTo('auth');
+      if (preferredTab === 'guest') {
+        switchAuthSubTab('guest');
+      } else if (preferredTab === 'reg') {
+        switchAuthSubTab('reg');
+        selectAuthViewRole('student');
+      } else if (preferredTab === 'orgs' || preferredTab === 'school' || preferredTab === 'schools' || preferredTab === 'classes') {
+        switchAuthSubTab('reg');
+        selectAuthViewRole('school_org');
+      } else if (preferredTab === 'tg' || preferredTab === 'telegram') {
+        switchAuthSubTab('tg');
+      } else {
+        switchAuthSubTab('login');
+      }
     }
 
     function closeRegModal() {
-      document.getElementById('reg-modal').classList.add('hidden');
+      const m = document.getElementById('reg-modal');
+      if (m) m.classList.add('hidden');
     }
 
     function loadSchoolsForSelect() {
@@ -4847,6 +5765,12 @@
       .then(res => res.json())
       .then(data => {
         if (data.status === 'ok') {
+          state.userRole = selectedRegRole;
+          state.userName = name;
+          state.isGuest = false;
+          saveState();
+          renderRoleAccess();
+          renderProfile();
           showToast(data.message || 'Регистрация успешно пройдена!');
           closeRegModal();
         } else {
@@ -4860,6 +5784,10 @@
 
     /* School Registration */
     function openSchoolRegModal() {
+      if (!hasRole(['teacher', 'admin'])) {
+        showToast('🔒 Регистрация новых школ доступна только преподавателям и администрации.');
+        return;
+      }
       document.getElementById('school-reg-name').value = '';
       document.getElementById('school-reg-city').value = '';
       document.getElementById('school-reg-district').value = '';
@@ -4900,6 +5828,512 @@
       });
     }
 
+    /* ============================================================
+       AUTH & REGISTRATION TAB CONTROLLERS (LOGIN, REG, ORGS, TG)
+       ============================================================ */
+
+    let selectedAuthRole = 'student';
+
+    function selectAuthViewRole(role) {
+      selectedAuthRole = role;
+      document.querySelectorAll('#auth-view-role-tabs .btn-auth-role').forEach(btn => {
+        const isMatch = btn.dataset.role === role;
+        btn.classList.toggle('active', isMatch);
+        if (isMatch) {
+          btn.style.border = '1.5px solid var(--primary)';
+          btn.style.background = 'var(--primary-light)';
+          btn.style.color = 'var(--primary)';
+        } else {
+          btn.style.border = '1.5px solid var(--border-control)';
+          btn.style.background = 'var(--surface-input)';
+          btn.style.color = 'var(--ink)';
+        }
+      });
+
+      const userForm = document.getElementById('auth-reg-user-form');
+      const orgContainer = document.getElementById('auth-reg-org-container');
+      if (role === 'school_org') {
+        if (userForm) userForm.classList.add('hidden');
+        if (orgContainer) orgContainer.classList.remove('hidden');
+        loadAuthSchoolsAndClasses();
+        loadAllOrgsList();
+      } else {
+        if (userForm) userForm.classList.remove('hidden');
+        if (orgContainer) orgContainer.classList.add('hidden');
+      }
+    }
+
+    function switchAuthSubTab(tabName) {
+      if (tabName === 'orgs' || tabName === 'school') {
+        switchAuthSubTab('reg');
+        selectAuthViewRole('school_org');
+        return;
+      }
+      const tabs = ['guest', 'login', 'reg', 'tg'];
+      tabs.forEach(t => {
+        const pill = document.getElementById('auth-pill-' + t);
+        const panel = document.getElementById('auth-panel-' + t);
+        if (pill) {
+          const active = (t === tabName);
+          pill.classList.toggle('active', active);
+          pill.style.background = active ? 'var(--primary)' : 'transparent';
+          pill.style.color = active ? '#fff' : 'var(--ink)';
+        }
+        if (panel) {
+          panel.classList.toggle('hidden', t !== tabName);
+        }
+      });
+
+      if (tabName === 'reg') {
+        loadAuthSchoolsAndClasses();
+      }
+    }
+
+    function renderAuthStatusCard() {
+      const cardWrap = document.getElementById('auth-status-card-wrap');
+      const hasEntered = window.localStorage.getItem('basklingo_has_entered');
+      if (cardWrap) {
+        cardWrap.classList.toggle('hidden', !hasEntered);
+      }
+
+      const nameEl = document.getElementById('auth-status-name');
+      const roleEl = document.getElementById('auth-status-role-badge');
+      const orgEl = document.getElementById('auth-status-org');
+      const loginEl = document.getElementById('auth-status-login');
+      const tgEl = document.getElementById('auth-status-tg-badge');
+      const avatarEl = document.getElementById('auth-status-avatar');
+
+      const role = state.userRole || 'guest';
+      const name = state.userName || 'Гость платформы';
+      const login = state.userLogin || 'guest';
+      const className = state.userClass || '';
+
+      if (nameEl) nameEl.textContent = name;
+      const curL = lang();
+      if (roleEl) roleEl.textContent = getRoleName(role, curL.id);
+      if (loginEl) loginEl.textContent = state.isGuest ? (curL.guestLoginLabel || 'гостевой доступ') : '@' + login;
+      if (avatarEl) {
+        const icons = { admin: '👑', student: '🎓', teacher: '👨‍🏫', linguist_expert: '🏛️', guest: '👤' };
+        avatarEl.textContent = icons[role] || (name[0] || 'A');
+      }
+      if (orgEl) {
+        orgEl.textContent = state.isGuest
+          ? (curL.guestOrgLabel || 'Ознакомительный режим без привязки к школе')
+          : (className ? `Республиканская гимназия им. Р. Гарипова · Класс ${className}` : 'Образовательное учреждение РБ');
+      }
+      if (tgEl) {
+        if (state.telegramLinked) {
+          tgEl.style.background = '#D1FAE5';
+          tgEl.style.color = '#059669';
+          tgEl.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Telegram: @${escapeHtml(state.telegramUsername || '')}`;
+        } else {
+          tgEl.style.background = '#FEF3C7';
+          tgEl.style.color = '#B45309';
+          tgEl.innerHTML = `⚠️ Telegram не привязан`;
+        }
+      }
+
+      const detTitle = document.getElementById('auth-tg-detected-title');
+      const detSub = document.getElementById('auth-tg-detected-sub');
+      const user = window.Telegram?.WebApp?.initDataUnsafe?.user;
+      if (detTitle && detSub) {
+        if (user) {
+          detTitle.textContent = 'Telegram Mini App обнаружен';
+          detSub.textContent = `Пользователь: @${user.username || 'user'} (ID: ${user.id})`;
+        } else {
+          detTitle.textContent = 'Telegram WebApp готов к связке';
+          detSub.textContent = `Статус: ${state.telegramLinked ? 'привязан к @' + state.telegramUsername : 'ожидает привязки'}`;
+        }
+      }
+    }
+
+    function submitAuthLogin() {
+      const loginInput = document.getElementById('auth-input-login');
+      const passInput = document.getElementById('auth-input-password');
+      const login = loginInput ? loginInput.value.trim() : '';
+      const password = passInput ? passInput.value : '';
+
+      if (!login || !password) {
+        showToast('Пожалуйста, введите логин и пароль');
+        return;
+      }
+
+      fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ login, password })
+      })
+      .then(async res => {
+        let data = {};
+        try { data = await res.json(); } catch(e) {}
+        if (!res.ok) {
+          if (res.status === 401) throw new Error('Неверный логин или пароль');
+          if (res.status === 400) throw new Error(data.message || 'Заполните логин и пароль');
+          if (res.status === 404) throw new Error('Пользователь с таким логином не найден');
+          throw new Error(data.message || `Ошибка авторизации (${res.status})`);
+        }
+        return data;
+      })
+      .then(data => {
+        if (data.status === 'ok' && data.user) {
+          state.userRole = data.user.role || 'student';
+          state.userName = data.user.first_name || data.user.login;
+          state.userLogin = data.user.login;
+          state.userClass = data.user.class_name || '7А';
+          state.userSchoolId = data.user.school_id || 1;
+          state.telegramLinked = Boolean(data.user.telegram_linked);
+          state.telegramUsername = data.user.telegram_username || '';
+          state.telegramId = data.user.telegram_id || null;
+          state.userId = data.user.id;
+          state.isGuest = false;
+
+          try { window.localStorage.setItem('basklingo_has_entered', 'true'); } catch(e) {}
+          saveState();
+          renderRoleAccess();
+          renderHeaderMetrics();
+          renderProfile();
+          renderAuthStatusCard();
+          showToast(`Добро пожаловать, ${state.userName}!`);
+          if (passInput) passInput.value = '';
+          navTo('trail');
+        } else {
+          showToast(data.message || 'Неверный логин или пароль');
+        }
+      })
+      .catch(err => {
+        showToast(err.message || 'Не удалось выполнить вход. Проверьте сеть.');
+      });
+    }
+
+    function submitAuthRegister() {
+      const login = (document.getElementById('auth-reg-login')?.value || '').trim();
+      const password = document.getElementById('auth-reg-password')?.value || '';
+      const name = (document.getElementById('auth-reg-fullname')?.value || '').trim();
+      const tgUser = (document.getElementById('auth-reg-tg-user')?.value || '').trim().replace(/^@/, '');
+      const schoolId = Number(document.getElementById('auth-reg-school-select')?.value) || 1;
+      const customClass = (document.getElementById('auth-reg-class-custom')?.value || '').trim();
+      const selectClass = document.getElementById('auth-reg-class-select')?.value || '7А';
+      const className = customClass || selectClass;
+      const langPair = document.getElementById('auth-reg-lang-pair')?.value || 'ba-ru';
+      const tid = window.Telegram?.WebApp?.initDataUnsafe?.user?.id || null;
+
+      if (!login) {
+        showToast('Пожалуйста, укажите логин');
+        return;
+      }
+      if (!password) {
+        showToast('Пожалуйста, придумайте пароль');
+        return;
+      }
+      if (password.length < 4) {
+        showToast('Пароль должен содержать не менее 4 символов');
+        return;
+      }
+      if (!name) {
+        showToast('Пожалуйста, укажите ваше имя');
+        return;
+      }
+
+      fetch('/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          login,
+          password,
+          first_name: name,
+          role: selectedAuthRole,
+          school_id: schoolId,
+          class_name: className,
+          selected_lang_pair: langPair,
+          telegram_id: tid,
+          telegram_username: tgUser
+        })
+      })
+      .then(async res => {
+        let data = {};
+        try { data = await res.json(); } catch(e) {}
+        if (!res.ok) {
+          if (res.status === 409) throw new Error('Пользователь с таким логином уже существует');
+          if (res.status === 400) throw new Error(data.message || 'Проверьте корректность введённых данных');
+          throw new Error(data.message || `Ошибка сервера (${res.status}). Попробуйте позже.`);
+        }
+        return data;
+      })
+      .then(data => {
+        if (data.status === 'ok' && data.user) {
+          state.userRole = data.user.role;
+          state.userName = data.user.first_name;
+          state.userLogin = data.user.login;
+          state.userClass = data.user.class_name;
+          state.userSchoolId = data.user.school_id;
+          state.telegramLinked = Boolean(data.user.telegram_linked);
+          state.telegramUsername = data.user.telegram_username;
+          state.telegramId = data.user.telegram_id;
+          state.userId = data.user.id;
+          state.isGuest = false;
+
+          try { window.localStorage.setItem('basklingo_has_entered', 'true'); } catch(e) {}
+          saveState();
+          renderRoleAccess();
+          renderHeaderMetrics();
+          renderProfile();
+          renderAuthStatusCard();
+          showToast(data.message || 'Аккаунт успешно создан!');
+          navTo('trail');
+        } else {
+          showToast(data.message || 'Ошибка регистрации');
+        }
+      })
+      .catch(err => {
+        showToast(err.message || 'Не удалось зарегистрироваться. Проверьте сеть.');
+      });
+    }
+
+    function submitAuthNewSchool() {
+      const name = (document.getElementById('auth-org-school-name')?.value || '').trim();
+      const city = (document.getElementById('auth-org-school-city')?.value || '').trim();
+      const district = (document.getElementById('auth-org-school-district')?.value || '').trim() || city;
+
+      if (!name || !city) {
+        showToast('Укажите название школы и город');
+        return;
+      }
+
+      fetch('/api/schools/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, city, district })
+      })
+      .then(async res => {
+        let data = {};
+        try { data = await res.json(); } catch (e) {}
+        if (!res.ok) {
+          throw new Error(data.message || `Ошибка добавления школы (${res.status})`);
+        }
+        return data;
+      })
+      .then(data => {
+        if (data.status === 'ok') {
+          showToast(data.message || 'Школа зарегистрирована!');
+          if (document.getElementById('auth-org-school-name')) document.getElementById('auth-org-school-name').value = '';
+          if (document.getElementById('auth-org-school-city')) document.getElementById('auth-org-school-city').value = '';
+          if (document.getElementById('auth-org-school-district')) document.getElementById('auth-org-school-district').value = '';
+          loadAuthSchoolsAndClasses();
+          loadAllOrgsList();
+        } else {
+          showToast(data.message || 'Ошибка регистрации школы');
+        }
+      })
+      .catch(err => {
+        showToast(err.message || 'Ошибка сети при добавлении школы');
+      });
+    }
+
+    function submitAuthNewClass() {
+      const schoolId = Number(document.getElementById('auth-org-class-school-select')?.value) || 1;
+      const name = (document.getElementById('auth-org-class-name')?.value || '').trim();
+
+      if (!name) {
+        showToast('Укажите название класса');
+        return;
+      }
+
+      fetch('/api/classes/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ school_id: schoolId, name })
+      })
+      .then(async res => {
+        let data = {};
+        try { data = await res.json(); } catch (e) {}
+        if (!res.ok) {
+          throw new Error(data.message || `Ошибка добавления класса (${res.status})`);
+        }
+        return data;
+      })
+      .then(data => {
+        if (data.status === 'ok') {
+          showToast(data.message || 'Класс успешно добавлен в структуру школы!');
+          if (document.getElementById('auth-org-class-name')) document.getElementById('auth-org-class-name').value = '';
+          onAuthSchoolChange();
+          loadAllOrgsList();
+        } else {
+          showToast(data.message || 'Ошибка добавления класса');
+        }
+      })
+      .catch(err => {
+        showToast(err.message || 'Ошибка сети при добавлении класса');
+      });
+    }
+
+    function submitAuthLinkTg() {
+      const tidRaw = document.getElementById('auth-tg-input-id')?.value;
+      const tid = tidRaw ? Number(tidRaw) : null;
+      const username = (document.getElementById('auth-tg-input-username')?.value || '').trim().replace(/^@/, '');
+
+      if (!tid && !username) {
+        showToast('Укажите хотя бы Telegram ID или Username');
+        return;
+      }
+
+      const userId = state.userId || 1;
+
+      fetch('/api/auth/link-telegram', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          user_id: userId,
+          telegram_id: tid,
+          telegram_username: username
+        })
+      })
+      .then(async res => {
+        let data = {};
+        try { data = await res.json(); } catch (e) {}
+        if (!res.ok) {
+          throw new Error(data.message || `Ошибка привязки Telegram (${res.status})`);
+        }
+        return data;
+      })
+      .then(data => {
+        if (data.status === 'ok') {
+          state.telegramLinked = true;
+          if (username) state.telegramUsername = username;
+          if (tid) state.telegramId = tid;
+          saveState();
+          renderAuthStatusCard();
+          showToast(data.message || 'Telegram успешно привязан!');
+        } else {
+          showToast(data.message || 'Ошибка привязки Telegram');
+        }
+      })
+      .catch(err => {
+        showToast(err.message || 'Ошибка сети при привязке Telegram');
+      });
+    }
+
+    function syncTelegramWebAppData() {
+      const user = window.Telegram?.WebApp?.initDataUnsafe?.user;
+      const tid = user?.id || state.telegramId || 100001;
+      const username = user?.username || state.telegramUsername || 'aanagke';
+
+      if (document.getElementById('auth-tg-input-id')) {
+        document.getElementById('auth-tg-input-id').value = String(tid);
+      }
+      if (document.getElementById('auth-tg-input-username')) {
+        document.getElementById('auth-tg-input-username').value = '@' + username;
+      }
+
+      submitAuthLinkTg();
+    }
+
+    function loadAuthSchoolsAndClasses() {
+      fetch('/api/schools/list')
+        .then(res => res.json())
+        .then(data => {
+          if (data && data.schools && data.schools.length > 0) {
+            const regSelect = document.getElementById('auth-reg-school-select');
+            const orgSelect = document.getElementById('auth-org-class-school-select');
+            const modalSelect = document.getElementById('reg-school-select');
+
+            const optionsHtml = data.schools.map(s => `
+              <option value="${s.id}">${escapeHtml(s.name)} (${escapeHtml(s.city)})</option>
+            `).join('');
+
+            if (regSelect) regSelect.innerHTML = optionsHtml;
+            if (orgSelect) orgSelect.innerHTML = optionsHtml;
+            if (modalSelect) modalSelect.innerHTML = optionsHtml;
+
+            onAuthSchoolChange();
+          }
+        })
+        .catch(() => {});
+    }
+
+    function onAuthSchoolChange() {
+      const schoolSelect = document.getElementById('auth-reg-school-select');
+      const schoolId = schoolSelect ? Number(schoolSelect.value) || 1 : 1;
+
+      fetch(`/api/classes/list?school_id=${schoolId}`)
+        .then(res => res.json())
+        .then(data => {
+          const classSelect = document.getElementById('auth-reg-class-select');
+          if (classSelect && data && data.classes) {
+            if (data.classes.length > 0) {
+              classSelect.innerHTML = data.classes.map(c => `
+                <option value="${escapeHtml(c.name)}">${escapeHtml(c.name)}</option>
+              `).join('');
+            } else {
+              classSelect.innerHTML = `
+                <option value="7А">7А</option>
+                <option value="7Б">7Б</option>
+                <option value="8В">8В</option>
+              `;
+            }
+          }
+        })
+        .catch(() => {});
+    }
+
+    function loadAllOrgsList() {
+      const container = document.getElementById('auth-orgs-live-list');
+      if (!container) return;
+      container.innerHTML = '<div style="font-size: 11px; color: var(--ink-soft); padding: 8px;">Загрузка реестра учреждений...</div>';
+
+      fetch('/api/schools/list')
+        .then(res => res.json())
+        .then(data => {
+          if (!data || !data.schools || data.schools.length === 0) {
+            container.innerHTML = '<div style="font-size: 11px; color: var(--ink-soft); padding: 8px;">Нет данных об учреждениях</div>';
+            return;
+          }
+
+          container.innerHTML = data.schools.map(s => `
+            <div style="background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 10px 12px; display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+              <div style="min-width: 0;">
+                <div style="font-weight: 800; font-size: 12px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${escapeHtml(s.name)}</div>
+                <div style="font-size: 11px; color: var(--ink-soft); margin-top: 2px;">📍 ${escapeHtml(s.city || 'РБ')}${s.district ? ' · ' + escapeHtml(s.district) : ''}</div>
+              </div>
+              <span style="font-size: 10px; font-weight: 800; color: var(--primary); background: var(--primary-light); padding: 3px 8px; border-radius: 9999px; flex-shrink: 0;">
+                ID: ${s.id}
+              </span>
+            </div>
+          `).join('');
+        })
+        .catch(() => {
+          container.innerHTML = '<div style="font-size: 11px; color: var(--ink-soft); padding: 8px;">Не удалось загрузить реестр</div>';
+        });
+    }
+
+    function logoutCurrentUser() {
+      try {
+        window.localStorage.removeItem('basklingo_has_entered');
+      } catch (e) {}
+      state.userRole = 'guest';
+      state.isGuest = true;
+      state.userName = 'Гость платформы';
+      state.userLogin = 'guest';
+      state.userClass = '';
+      state.telegramLinked = false;
+      state.telegramUsername = '';
+      state.telegramId = null;
+      state.userId = 0;
+      try {
+        const loginInp = document.getElementById('auth-input-login');
+        const passInp = document.getElementById('auth-input-password');
+        if (loginInp) loginInp.value = '';
+        if (passInp) passInp.value = '';
+      } catch (e) {}
+      saveState();
+      renderRoleAccess();
+      renderHeaderMetrics();
+      renderProfile();
+      renderAuthStatusCard();
+      showToast('Вы вышли из учетной записи.');
+      navTo('auth');
+      switchAuthSubTab('login');
+    }
+
     /* Daily Corpus Verification */
     function openDailyCorpusModal() {
       document.getElementById('daily-corpus-modal').classList.remove('hidden');
@@ -4919,12 +6353,53 @@
       const baBox = document.getElementById('daily-text-ba');
       const trBox = document.getElementById('daily-text-tr');
       const inputSuggest = document.getElementById('daily-suggest-text');
+      const btnConfirm = document.getElementById('daily-btn-confirm');
+      const btnSuggest = document.getElementById('daily-btn-suggest');
+      const isGuestUser = Boolean(state.isGuest || state.userRole === 'guest');
 
       fragIdPill.textContent = 'Загрузка...';
       metaSpan.textContent = '';
       baBox.textContent = 'Получение фрагмента из базы данных...';
       trBox.textContent = '';
       inputSuggest.value = '';
+
+      if (btnConfirm && btnSuggest && inputSuggest) {
+        if (isGuestUser) {
+          btnConfirm.disabled = true;
+          btnConfirm.style.opacity = '0.6';
+          btnConfirm.style.cursor = 'not-allowed';
+          btnConfirm.textContent = '🔒 Перевод верен (Требуется вход)';
+          btnConfirm.title = 'Сохранение голосов в базе данных доступно только авторизованным пользователям';
+
+          btnSuggest.disabled = true;
+          btnSuggest.style.opacity = '0.6';
+          btnSuggest.style.cursor = 'not-allowed';
+          btnSuggest.textContent = '🔒 Отправить исправление (Требуется вход)';
+          btnSuggest.title = 'Отправка исправлений в базу данных доступна только авторизованным пользователям';
+
+          inputSuggest.disabled = true;
+          inputSuggest.placeholder = '🔒 Войдите в аккаунт, чтобы предложить перевод в базу данных';
+          inputSuggest.style.opacity = '0.65';
+          inputSuggest.style.cursor = 'not-allowed';
+        } else {
+          btnConfirm.disabled = false;
+          btnConfirm.style.opacity = '1';
+          btnConfirm.style.cursor = 'pointer';
+          btnConfirm.textContent = '✅ Перевод верен (+15 XP, +10 Тамъя)';
+          btnConfirm.title = '';
+
+          btnSuggest.disabled = false;
+          btnSuggest.style.opacity = '1';
+          btnSuggest.style.cursor = 'pointer';
+          btnSuggest.textContent = '✏️ Отправить исправление на консенсус (+35 XP, +20 Тамъя)';
+          btnSuggest.title = '';
+
+          inputSuggest.disabled = false;
+          inputSuggest.placeholder = 'Введите исправленный перевод...';
+          inputSuggest.style.opacity = '1';
+          inputSuggest.style.cursor = 'text';
+        }
+      }
 
       fetch('/api/translations/daily?lang_pair=ba-ru')
         .then(res => res.json())
@@ -4966,16 +6441,38 @@
           currentAudioObj.play().catch(() => {
             showToast('Воспроизведение звука');
           });
+        } else if ('speechSynthesis' in window) {
+          const utter = new SpeechSynthesisUtterance(currentDailyFragment.text_ba);
+          utter.lang = 'ru-RU';
+          utter.rate = 0.85;
+          window.speechSynthesis.speak(utter);
+          showToast('Воспроизведение речи');
         } else {
           showToast('Аудио недоступно');
         }
       })
       .catch(() => {
+        if ('speechSynthesis' in window) {
+          try {
+            const utter = new SpeechSynthesisUtterance(currentDailyFragment.text_ba);
+            utter.lang = 'ru-RU';
+            utter.rate = 0.85;
+            window.speechSynthesis.speak(utter);
+            showToast('Воспроизведение речи');
+            return;
+          } catch(e) {}
+        }
         showToast('TTS временно офлайн');
       });
     }
 
     function voteCorpus(action) {
+      if (state.isGuest || state.userRole === 'guest') {
+        showToast('🔒 Оценка переводов и сохранение в базе данных доступны только авторизованным пользователям.');
+        closeDailyCorpusModal();
+        navTo('auth');
+        return;
+      }
       if (!currentDailyFragment) return;
       const suggested = document.getElementById('daily-suggest-text').value.trim();
       if (action === 'suggest_edit' && !suggested) {
@@ -5035,6 +6532,10 @@
 
     /* LMS Teacher Dashboard */
     function openLmsModal() {
+      if (!hasRole(['teacher', 'admin'])) {
+        showToast('🔒 Доступ ограничен: кабинет LMS открыт только учителям и администраторам.');
+        return;
+      }
       document.getElementById('lms-modal').classList.remove('hidden');
       loadLmsReport();
     }
@@ -5091,6 +6592,10 @@
 
     /* Expert Review Panel */
     function openExpertModal() {
+      if (!hasRole(['linguist_expert', 'admin'])) {
+        showToast('🔒 Доступ ограничен: совет экспертов открыт только для сотрудников УФИЦ РАН и администраторов.');
+        return;
+      }
       document.getElementById('expert-modal').classList.remove('hidden');
       loadExpertReviewList();
     }
@@ -5155,7 +6660,12 @@
           expert_notes: 'Утверждено экспертным советом лингвистов ИИЯЛ УФИЦ РАН'
         })
       })
-      .then(res => res.json())
+      .then(async res => {
+        let data = {};
+        try { data = await res.json(); } catch(e) {}
+        if (!res.ok) throw new Error(data.message || `Ошибка сохранения (${res.status})`);
+        return data;
+      })
       .then(data => {
         if (data.status === 'ok') {
           showToast('⚖️ Эталонный перевод утвержден в академический корпус!');
@@ -5165,12 +6675,16 @@
         }
       })
       .catch(err => {
-        showToast('Ошибка сети: ' + err.message);
+        showToast(err.message || 'Ошибка сети при отправке решения');
       });
     }
 
     /* Corpus Slicer */
     function openSliceModal() {
+      if (!hasRole(['linguist_expert', 'admin'])) {
+        showToast('🔒 Доступ ограничен: нарезчик корпуса открыт только для экспертов УФИЦ РАН и администраторов.');
+        return;
+      }
       document.getElementById('slice-modal').classList.remove('hidden');
     }
 
@@ -5203,7 +6717,12 @@
           lang_pair: 'ba-ru'
         })
       })
-      .then(res => res.json())
+      .then(async res => {
+        let data = {};
+        try { data = await res.json(); } catch (e) {}
+        if (!res.ok) throw new Error(data.message || `Ошибка нарезки (${res.status})`);
+        return data;
+      })
       .then(data => {
         if (data && data.status === 'ok') {
           summary.innerHTML = `<span style="color: #059669; font-weight: 800;">✅ Успешно нарезано и сохранено: ${data.total_sliced} предложений/фрагментов!</span>`;
@@ -5213,7 +6732,7 @@
         }
       })
       .catch(err => {
-        summary.textContent = 'Ошибка сети: ' + err.message;
+        summary.textContent = 'Ошибка сети: ' + (err.message || 'не удалось обработать текст');
       });
     }
 
@@ -5250,10 +6769,12 @@
     renderAll();
 
     const hashView = window.location.hash.replace('#', '');
-    if (['trail', 'leaderboard', 'profile'].includes(hashView)) {
+    if (['trail', 'leaderboard', 'profile', 'auth'].includes(hashView)) {
       navTo(hashView);
     } else if (state.currentView && state.currentView !== 'trail') {
       navTo(state.currentView);
+    } else {
+      navTo('trail');
     }
   </script>
 </body>

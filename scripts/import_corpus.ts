@@ -32,7 +32,7 @@ try {
                     source: item.source || 'AigizK_Parallel_Corpus'
                 });
             }
-        } catch (_) { /* ignored */ }
+        } catch (_) {  }
 
         if (batch.length >= 1000) {
             await insertBatch(sql, batch);

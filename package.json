@@ -4,10 +4,17 @@
     "private": true,
     "type": "module",
     "scripts": {
+        "dev": "bun run --parallel --no-exit-on-error dev:backend dev:frontend dev:tts",
+        "dev:backend": "bun run src/backend/src/index.ts",
+        "dev:frontend": "bun run --cwd src/frontend dev",
+        "dev:bot": "bun run src/telegram/src/bot.ts",
+        "dev:tts": "bun run scripts/run_tts.ts",
         "start:backend": "bun run src/backend/src/index.ts",
         "start:bot": "bun run src/telegram/src/bot.ts",
-        "start:frontend": "bun run --cwd src/frontend dev --host 0.0.0.0",
+        "start:frontend": "bun run --cwd src/frontend dev",
+        "start:tts": "bun run scripts/run_tts.ts",
         "build:frontend": "bun run --cwd src/frontend build",
+        "test": "bun test",
         "migrate": "bun run scripts/migrate.ts",
         "seed": "bun run scripts/seed_corpus.ts"
     },
@@ -15,6 +22,7 @@
         "grammy": "^1.35.0"
     },
     "devDependencies": {
-        "@types/node": "^22.13.1"
+        "@types/bun": "^1.4.4",
+        "@types/node": "^26.6.6"
     }
 }

@@ -15,6 +15,11 @@ async function verify() {
     const achievements = await sql`SELECT count(id) as cnt FROM achievements`;
     console.log('4. Achievements count:', achievements[0]?.cnt);
 
+    await sql`UPDATE users SET role = 'admin', first_name = 'Андрей (Главный администратор)' WHERE id = 1`;
+
+    const users = await sql`SELECT id, telegram_id, username, first_name, role FROM users`;
+    console.log('Users in DB:', users);
+
     const distIndex = Bun.file('src/frontend/dist/index.html');
     console.log('5. Frontend bundle exists:', await distIndex.exists());
 

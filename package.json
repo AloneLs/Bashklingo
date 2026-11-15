@@ -1,0 +1,20 @@
+{
+    "name": "bashklingo",
+    "version": "2.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "start:backend": "bun run src/backend/src/index.ts",
+        "start:bot": "bun run src/telegram/src/bot.ts",
+        "start:frontend": "bun run --cwd src/frontend dev --host 0.0.0.0",
+        "build:frontend": "bun run --cwd src/frontend build",
+        "migrate": "bun run scripts/migrate.ts",
+        "seed": "bun run scripts/seed_corpus.ts"
+    },
+    "dependencies": {
+        "grammy": "^1.35.0"
+    },
+    "devDependencies": {
+        "@types/node": "^22.13.1"
+    }
+}

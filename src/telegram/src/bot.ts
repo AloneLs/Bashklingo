@@ -1,6 +1,6 @@
 import { Bot, InlineKeyboard } from 'grammy';
 
-const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '9171865235:AAGHW4J3LSBmDAC4ARCFdOm73zc1p3zL3WQ';
+const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const FRONTEND_URL = process.env.FRONTEND_URL || 'http://10.10.10.205:3000';
 const BACKEND_URL = `http://127.0.0.1:${process.env.PORT || '8765'}`;
 
